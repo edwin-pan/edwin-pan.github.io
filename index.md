@@ -17,9 +17,14 @@ UIUC | PreSense | C3SR | Uhnder | Uhnder
 ---- | -------- | ---- | ------ | ------
 2016 - Present  | 2019 - Present  | 2019 - Present  | Summer 2016  | Summer 2017
 
-UIUC | Second Header
+UIUC | PreSense | C3SR
+------------ | ------------- | -------------
+2016 to Present | 2019 to Present | 2019 to Present
+Content in the first column | Content in the second column | Content in the second column
+
+Uhnder | Uhnder
 ------------ | -------------
-Content from cell 1 | Content from cell 2
+Summer 2016  | Summer 2017
 Content in the first column | Content in the second column
 
 ## Additional Content
