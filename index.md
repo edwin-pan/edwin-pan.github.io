@@ -13,14 +13,11 @@ My research interests include Signal Processing, mmWave Radars, MIMO systems, Im
 [MIT-IBM AI Horizon's Network 2019 AI Research Week](/MIT_AIHN)
 
 ## Current and Past Affiliations
-UIUC | PreSense | C3SR | Uhnder | Uhnder
----- | -------- | ---- | ------ | ------
-2016 - Present  | 2019 - Present  | 2019 - Present  | Summer 2016  | Summer 2017
 
 UIUC | PreSense | C3SR
 ------------ | ------------- | -------------
 2016 to Present | 2019 to Present | 2019 to Present
-Content in the first column | Content in the second column | Content in the second column
+<img src="res/uiuc_logo.png?raw=true" class="scalable"/> | <img src="res/PreSense.png?raw=true" class="scalable"/> | <img src="res/C3SR.png?raw=true" class="scalable"/>
 
 Uhnder | Uhnder
 ------------ | -------------
