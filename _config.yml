@@ -7,6 +7,5 @@ description:
   <a style="font-size:80%;" href="http://csl.illinois.edu/">Coordinated Science Laboratory</a><br>
   <a style="font-size:80%;" href="http://www.illinois.edu/">University of Illinois at Urbana-Champaign</a><br>
   <!--<p style="font-size:80%;"><i class="fa fa-globe"></i> Insert Address </p> -->
-  <p style="font-size:80%;"><i class="fa fa-github"></i> <a href="https://github.com/edwin-pan">github.com/edwin-pan</a></p>
 
 theme: jekyll-theme-minimal
