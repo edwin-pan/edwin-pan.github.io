@@ -8,9 +8,16 @@ In January of 2019, I joined the ECE Department's Inaugural Alchemy Deep Tech In
 Together with four of my peers, we began work on a startup called PreSense. This company has become my passion project. At PreSense, I gain valuable experience building out DSP stack capabilities for the next generation of MIMO mmWave Radar platforms. This unique opportunity allows me to take the technical skills I learn in class and directly apply them to real world scenarios that address wide ranging detection and perception needs in Robotics, Autonomous Vehicles, and various other industries.
 
 ## Research Interests
-My research interests include Signal Processing, Machine Learning, mmWave Radars, and MIMO systems.
+My research interests include Signal Processing, mmWave Radars, MIMO systems, Image Processing, and Machine Learning.
 
 [MIT-IBM AI Horizon's Network 2019 AI Research Week](/MIT_AIHN)
+
+## Current and Past Affiliations
+| <img src="res/uiuc_logo.png?raw=true" class="scalable"/>  | <img src="res/c3sr_color.jpg?raw=true" class="scalable"/> |
+| ------------- | ------------- |
+|  [https://illinois.edu/](https://illinois.edu/) | [https://c3sr.com/](https://c3sr.com/)]  |
+| 2016 - Present  | 2019 - Present  |
+
 
 ## Additional Content
 
