@@ -14,8 +14,8 @@ I am interested in Signal Processing, Machine Learning, mmWave Radars, and MIMO 
 
 ## Additional Content
 
-Alchemy Article: [link](https://www.csl.illinois.edu/news/new-group-harnesses-student-thought-process-and-creativity)
+Alchemy Article: [https://www.csl.illinois.edu/news/...](https://www.csl.illinois.edu/news/new-group-harnesses-student-thought-process-and-creativity)
 
-PreSense Webpage: [link](https://www.presenseradar.com/)
+PreSense Webpage: [https://www.presenseradar.com/](https://www.presenseradar.com/)
 
 PreSense Github: (pending release)
