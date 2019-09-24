@@ -1,11 +1,10 @@
 title: [Edwin Pan]
-logo: "/images/logo.png?raw=true" # your photo (or logo) here
-description: [Edwin Pan]
+logo: "/res/Edwin_Portrait.jpeg?raw=true"
+description: 
   First description 
   <br><br>
   Second description 
   <br><br>
   <a href="https://www.linkedin.com/in/example/">View My LinkedIn Profile</a>
 
-  
 theme: jekyll-theme-minimal

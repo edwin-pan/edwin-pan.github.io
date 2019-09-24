@@ -1,4 +1,5 @@
-# Test
-This is a test
+# About
+I am a Senior Undergraduate student studying Electrical Engineering at The University of Illinois @ Urbana-Champaign. 
 
-## Test test 123
+# Research Interests
+I am interested in Signal Processing, Machine Learning, mmWave Radars, and MIMO systems.
