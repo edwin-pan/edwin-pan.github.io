@@ -13,10 +13,9 @@ My research interests include Signal Processing, mmWave Radars, MIMO systems, Im
 [MIT-IBM AI Horizon's Network 2019 AI Research Week](/MIT_AIHN)
 
 ## Current and Past Affiliations
-| [UIUC Grainger College of Engineering](https://illinois.edu/)  | [C3SR](https://c3sr.com/)] |
-| ------------- | ------------- |
-| <img src="res/uiuc_logo.png?raw=true" class="scalable"/> | <img src="res/c3sr_color.jpg?raw=true" class="scalable"/> |
-| 2016 - Present  | 2019 - Present  |
+| UIUC Grainger College of Engineering  | PreSense | C3SR | Uhnder | Uhnder |
+| ------------- | ------------- |------------- |------------- |------------- |
+| 2016 - Present  | 2019 - Present  | 2019 - Present  | Summer 2016  | Summer 2017  |
 
 
 ## Additional Content
