@@ -17,12 +17,12 @@ My research interests include Signal Processing, mmWave Radars, MIMO systems, Im
 UIUC | PreSense | C3SR
 ------------ | ------------- | -------------
 2016 to Present | 2019 to Present | 2019 to Present
-<img src="res/uiuc_logo.png?raw=true" width="200" height="200"/> | <img src="res/PreSense.png?raw=true" width="200" height="200"/> | <img src="res/C3SR.png?raw=true" width="200" height="200"/>
+<img src="res/uiuc_logo.png?raw=true" width="100" height="100"/> | <img src="res/PreSense.png?raw=true" width="100" height="100"/> | <img src="res/C3SR.png?raw=true" width="100" height="100"/>
 
 [Uhnder](https://www.uhnder.com/) | [Uhnder](https://www.uhnder.com/)
 ------------ | -------------
 Summer 2016  | Summer 2017
-<img src="res/Uhnder.png?raw=true" class="scalable"/> | <img src="res/Uhnder.png?raw=true" class="scalable"/>
+<img src="res/Uhnder.png?raw=true" width="100" height="100"/> | <img src="res/Uhnder.png?raw=true" width="100" height="100"/>
 
 ## Additional Content
 
