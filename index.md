@@ -14,10 +14,10 @@ My research interests include Signal Processing, mmWave Radars, MIMO systems, Im
 
 ## Current and Past Affiliations
 
-UIUC | PreSense | C3SR
+[UIUC](https://illinois.edu/) | [PreSense](https://www.presenseradar.com/) | [C3SR](https://www.c3sr.com/)
 ------------ | ------------- | -------------
 2016 to Present | 2019 to Present | 2019 to Present
-<img src="res/uiuc_large.png?raw=true" width="100" height="100"/> | <img src="res/PreSense.png?raw=true" width="100" height="100"/> | <img src="res/C3SR.png?raw=true" width="100" height="100"/>
+<img src="res/uiuc_large.png?raw=true"/> | <img src="res/PreSense.png?raw=true" width="100" height="100"/> | <img src="res/C3SR.png?raw=true" width="100" height="100"/>
 
 [Uhnder](https://www.uhnder.com/) | [Uhnder](https://www.uhnder.com/)
 ------------ | -------------
