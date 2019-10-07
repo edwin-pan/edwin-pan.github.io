@@ -1,7 +1,7 @@
 # About
 I am a Senior Undergraduate student studying Electrical Engineering at The University of Illinois @ Urbana-Champaign [Grainger College of Engineering](https://grainger.illinois.edu/). 
 
-In January of 2019, I joined the ECE Department's Inaugural Alchemy Deep Tech Incubator Cohort. This new program is headed up by Professor Sanjay Patel (ECE, CSL), Professor Wen-mei Hwu (ECE, CSL), and co-director of the IBM Center for Cognitive Computing Systems ([C3SR](https://www.c3sr.com/)) Jinjun Xiong.
+In January of 2019, I joined the ECE Department's Inaugural [Alchemy Deep Tech Incubator Cohort](http://alchemyfoundry.com/). This new program is headed up by Professor Sanjay Patel (ECE, CSL), Professor Wen-mei Hwu (ECE, CSL), and co-director of the IBM Center for Cognitive Computing Systems ([C3SR](https://www.c3sr.com/)) Jinjun Xiong.
 
 <img src="res/Team.jpg?raw=true"/>
 
