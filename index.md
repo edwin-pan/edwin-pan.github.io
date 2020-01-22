@@ -11,6 +11,8 @@ Together with four of my peers, we began work on a startup called PreSense. This
 My research interests include Signal Processing, mmWave Radars, MIMO systems, Image Processing, and Machine Learning.
 
 [MIT-IBM AI Horizon's Network 2019 AI Research Week](/MIT_AIHN)
+[Machine Learning in Signal Processing (CS 598 PS, Fall 2019)](/CS598)
+
 
 ## Current and Past Affiliations
 
