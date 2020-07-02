@@ -41,3 +41,8 @@ ul.posts {
 ul.posts li {
     list-style: none;
 }
+
+img.scalable {
+    max-height: 100%;
+    max-width: 100%;
+}

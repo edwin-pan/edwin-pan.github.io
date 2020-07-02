@@ -92,27 +92,42 @@
           </tr>
         </tbody></table>
 
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Current and Past Affiliations</heading>
-              <p>
-                I'm interested in computer vision, machine learning, optimization, and image processing.
-                Much of my research is about inferring the physical world (shape, motion, color, light, etc) from images.
-                Representative papers are <span class="highlight">highlighted</span>.
-              </p>
-            </td>
+        <!-- <table cellpadding="5em" width="100%" align="center">
+          <heading>Current and Past Affiliations</heading>
+          <colgroup>
+              <col style="width:18%">
+              <col style="width:18%">
+              <col style="width:16%">
+              <col style="width:16%">
+              <col style="width:16%">
+              <col style="width:16%">
+          </colgroup>
+          <tr>
+              <td><img src="res/fb_logo.gif" class="scalable"/></td>
+              <td><img src="res/ti_logo.png" class="scalable"/></td>
+              <td><img src="res/ibm_logo.gif" class="scalable"/></td>
+              <td><img src="res/ibm_logo.gif" class="scalable"/></td>
+              <td><img src="res/c3sr_logo.png" class="scalable"/></td>
+              <td><img src="res/uiuc_logo.png" class="scalable"/></td>
           </tr>
-        </tbody></table>
+          <tr style="text-align: center; font-size: 0.8em">
+              <td valign="top"><a href="https://www.facebook.com/careers/areas-of-work/facebookrealitylabs">Facebook Reality Labs</a><br>Summer 2020</td>
+              <td valign="top"><a href="https://www.ti.com/">Texas Instruments</a><br>Summer 2019</td>
+              <td valign="top"><a href="https://www.ibm.com/watson">IBM Watson</a><br>Summer 2017</td>
+              <td valign="top"><a href="https://www.ibm.com/watson">IBM Watson</a><br>Summer 2018</td>
+              <td valign="top"><a href="https://www.c3sr.com/">C3SR</a><br>2016-present</td>
+              <td valign="top"><a href="https://illinois.edu/">UIUC</a><br>2016-present</td>
+          </tr>
+      </table> -->
+
 
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
           <tr>
           <td style="padding:20px;width:100%;vertical-align:middle">
             <heading>Research</heading>
             <p>
-              I'm interested in computer vision, machine learning, optimization, and image processing.
-              Much of my research is about inferring the physical world (shape, motion, color, light, etc) from images.
-              Representative papers are <span class="highlight">highlighted</span>.
+              I'm interested in machine vision, machine learning, simultaneous localization and mapping (SLAM), radar, and image processing.
+              My aim is to improve machine perception through improved sensor performance.
             </p>
           </td>
         </tr>
@@ -138,27 +153,24 @@
               </script>
             </td>
             <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://people.eecs.berkeley.edu/~bmild/fourfeat/index.html">
-                <papertitle>Fourier Features Let Networks Learn High Frequency Functions in Low Dimensional Domains</papertitle>
+              <a href="https://arxiv.org/pdf/1912.12395.pdf">
+                <papertitle>OpenRadar: A Toolkit for Prototyping mmWave Radar Applications</papertitle>
               </a>
               <br>
-              <a href="http://matthewtancik.com/">Matthew Tancik*</a>,
-              <a href="https://people.eecs.berkeley.edu/~pratul/">Pratul Srinivasan*</a>,
-              <a href="https://people.eecs.berkeley.edu/~bmild/">Ben Mildenhall*</a>,
-              <a href="https://people.eecs.berkeley.edu/~sfk/">Sara Fridovich-Keil</a>,
-              <a href="https://www.linkedin.com/in/nithinraghavan">Nithin Raghavan</a>,
-              <a href="https://scholar.google.com/citations?user=lvA86MYAAAAJ&hl=en">Utkarsh Singhal</a>,
-              <a href="http://cseweb.ucsd.edu/~ravir/">Ravi Ramamoorthi</a>,
-              <strong>Jonathan T. Barron</strong>,
-              <a href="https://www2.eecs.berkeley.edu/Faculty/Homepages/yirenng.html">Ren Ng</a>
+              <a href="https://www.linkedin.com/in/arjun-gupta-0/">Arjun Gupta*</a>,
+              <a href="https://www.linkedin.com/in/dashiell-kosaka-642900134/">Dashiell Kosaka*</a>,
+              <strong>Edwin Pan*</strong>,
+              <a href="https://www.linkedin.com/in/tangjingning/">Jingning Tang*</a>,
+              <a href="https://www.linkedin.com/in/ruihaoyao/">Ruihao Yao*</a>,
+              <a href="https://scholar.google.com/citations?user=lvA86MYAAAAJ&hl=en">Sanjay Patel</a>,
               <br>
-        <em>arXiv</em>, 2020  
+        <em>arXiv</em>, 2019  
               <br>
               <a href="https://people.eecs.berkeley.edu/~bmild/fourfeat/">project page</a>
         /
-              <a href="https://arxiv.org/abs/2006.10739">arXiv</a>
+              <a href="https://arxiv.org/abs/1912.12395">arXiv</a>
         /
-              <a href="https://github.com/tancik/fourier-feature-networks">code</a>
+              <a href="https://github.com/PreSenseRadar/OpenRadar">code</a>
               <p></p>
               <p>Composing neural networks with a simple Fourier feature mapping allows them to learn detailed high-frequency functions.</p>
             </td>
@@ -204,56 +216,142 @@
               </p>
             </td>
           </tr>  
+
+          <tr onmouseout="uflow_stop()" onmouseover="uflow_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='uflow_image'>
+                  <img src='images/uflow_after.png' width="160"></div>
+                <img src='images/uflow_before.jpg' width="160">
+              </div>
+              <script type="text/javascript">
+                function uflow_start() {
+                  document.getElementById('uflow_image').style.opacity = "1";
+                }
+
+                function uflow_stop() {
+                  document.getElementById('uflow_image').style.opacity = "0";
+                }
+                uflow_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://arxiv.org/abs/2006.04902">
+                <papertitle>What Matters in Unsupervised Optical Flow</papertitle>
+              </a>
+              <br>
+              <a href="http://ricojonschkowski.com/">Rico Jonschkowski</a>,
+              <a href="https://www.linkedin.com/in/austin-charles-stone-1ba33b138/">Austin Stone</a>,
+              <strong>Jonathan T. Barron</strong>,
+              <a href="https://research.google/people/ArielGordon/">Ariel Gordon</a>,
+              <a href="https://www.linkedin.com/in/kurt-konolige/">Kurt Konolige</a>,
+              <a href="https://research.google/people/AneliaAngelova/">Anelia Angelova</a>,
+              <br>
+              <em>arXiv</em>, 2020  
+              <br>
+              <a href="https://github.com/google-research/google-research/tree/master/uflow">code</a>
+              <br>
+              <p></p>
+              <p>
+              Extensive experimentation yields a simple optical flow technique that is trained on only unlabeled videos, but still works as well as supervised techniques.
+              </p>
+            </td>
+          </tr> 
         </tbody></table>
 
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
+        <!-- ----- -->
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
           <tr>
-            <td>
-              <heading>Service</heading>
-            </td>
-          </tr>
-        </tbody></table>
-        <table width="100%" align="center" border="0" cellpadding="20"><tbody>
+            <td style="padding:20px;vertical-align:middle">
+            <heading>Education</heading>
+
+          <colgroup>
+              <col style="width:19%">
+              <col style="width:17%">
+              <col style="width:16%">
+              <col style="width:16%">
+              <col style="width:16%">
+              <col style="width:16%">
+          </colgroup>
+
+        <tr>
+            <td><img src="images/SU_Seal_Red.png" class="scalable"/></td>
+            <td><img src="images/uiuc_logo_square.png" class="scalable" /></td>
+            <td><img src="images/blank.png" class="scalable"/></td>
+            <td><img src="images/blank.png" class="scalable"/></td>
+            <td><img src="images/blank.png" class="scalable"/></td>
+            <td><img src="images/blank.png" class="scalable"/></td>
+        </tr>
+        <tr style="text-align: center; font-size: 0.8em">
+            <td valign="top"><a href="https://www.c3sr.com/">Stanford, MS</a><br>2020-present</td>
+            <td valign="top"><a href="https://www.facebook.com/careers/areas-of-work/facebookrealitylabs">UIUC, BS</a><br>2016-2020</td>
+            <td valign="top"><a href=""></a><br></td>
+            <td valign="top"><a href=""></a><br></td>
+            <td valign="top"><a href=""></a><br></td>
+            <td valign="top"><a href=""></a><br></td>
+        </tr>
+        </td>
+        </tr>
+      </tbody></table>
+        <!-- ----- -->
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
           <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle"><img src="images/cvf.jpg"></td>
-            <td width="75%" valign="center">
-              <a href="http://cvpr2019.thecvf.com/area_chairs">Area Chair, CVPR 2019</a>
-              <br>
-              <br>
-              <a href="http://cvpr2018.thecvf.com/organizers/area_chairs">Area Chair, CVPR 2018</a>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/cs188.jpg" alt="cs188">
-            </td>
-            <td width="75%" valign="center">
-              <a href="http://inst.eecs.berkeley.edu/~cs188/sp11/announcements.html">Graduate Student Instructor, CS188 Spring 2011</a>
-              <br>
-              <br>
-              <a href="http://inst.eecs.berkeley.edu/~cs188/fa10/announcements.html">Graduate Student Instructor, CS188 Fall 2010</a>
-              <br>
-              <br>
-              <a href="http://aima.cs.berkeley.edu/">Figures, "Artificial Intelligence: A Modern Approach", 3rd Edition</a>
-            </td>
-          </tr>
-        </tbody></table>
+            <td style="padding:20px;vertical-align:middle">
+              <heading>Employment</heading>
+
+          <colgroup>
+              <col style="width:16%">
+              <col style="width:16%">
+              <col style="width:16%">
+              <col style="width:16%">
+              <col style="width:16%">
+              <col style="width:16%">
+          </colgroup>
+
+        <tr>
+            <td><img src="images/Uhnder_small.png" class="scalable"/></td>
+            <td><img src="images/PreSense.png" class="scalable"/></td>
+            <td><img src="images/Uhnder.png" class="scalable"/></td>
+            <td><img src="images/Uhnder.png" class="scalable"/></td>
+            <td><img src="images/blank.png" class="scalable" /></td>
+            <td><img src="images/blank.png" class="scalable"/></td>
+
+        </tr>
+        <tr style="text-align: center; font-size: 0.8em">
+            <td valign="top"><a href="https://www.uhnder.com/">Uhnder</a><br>Summer 2020</td>
+            <td valign="top"><a href="https://www.presenseradar.com/">PreSense</a><br>Summer 2019</td>
+            <td valign="top"><a href="https://www.uhnder.com/">Uhnder</a><br>Summer 2018</td>
+            <td valign="top"><a href="https://www.uhnder.com/">Uhnder</a><br>Summer 2017</td>
+            <td valign="top"><a href=""></a><br></td>
+            <td valign="top"><a href=""></a><br></td>
+
+        </tr>
+
+        </tr>
+      </tbody></table>
+
+        <br><br>
+        <!-- Gotta have that footer! -->
+        <hr>
+        <footer class="footer">
+          <div class="container">
+            <p>
+              &nbsp;&nbsp;&nbsp;Updated July 1st, 2020</p>
+            </p>
+            <p align=right>
+              <a href="https://jonbarron.info/"> Template </a>
+              <a class="pull-right" href="#">
+                <script type="text/javascript" id="clustrmaps"
+                  src="//cdn.clustrmaps.com/map_v2.js?d=TUgFrtOmtKYxWSVaYTURO0MNpu5rDq6I6q5sgBQjByU&cl=ffffff&w=a">
+                </script>
+              </a>
+            </p>
+          </div>
+        </footer>
 
       </td>
     </tr>
   </table>
-
-        <!-- Gotta have that footer! -->
-<div class="row">
-	<div class="col-md-12">
-
-		<div class="footer">
-			<p class="pull-center">
-				Updated July 1st, 2020. <a href="https://jonbarron.info/">Template Credit</a>
-			</p>
-		</div>
-	</div>
-</div>
 
 </body>
 
