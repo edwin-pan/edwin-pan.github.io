@@ -127,31 +127,73 @@
             <heading>Research</heading>
             <p>
               I'm interested in machine vision, machine learning, simultaneous localization and mapping (SLAM), radar, and image processing.
-              My aim is to improve machine perception through improved sensor performance.
+              My aim is to improve machine perception through advancements in sensor system algorithms.
             </p>
           </td>
         </tr>
       </tbody></table>
 
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr onmouseout="ff_stop()" onmouseover="ff_start()">
+          <tr onmouseout="uflow_stop()" onmouseover="uflow_start()">
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
-                <div class="two" id='ff_image'>
-                  <img src='images/lion_ff.jpg' width="160"></div>
-                <img src='images/lion_none.jpg' width="160">
+                <div class="two" id='uflow_image'>
+                  <img src='images/rd_3d_end.png' width="160"></div>
+                <img src='images/rd_3d_start.png' width="160">
               </div>
               <script type="text/javascript">
-                function ff_start() {
-                  document.getElementById('ff_image').style.opacity = "1";
+                function uflow_start() {
+                  document.getElementById('uflow_image').style.opacity = "1";
                 }
 
-                function ff_stop() {
-                  document.getElementById('ff_image').style.opacity = "0";
+                function uflow_stop() {
+                  document.getElementById('uflow_image').style.opacity = "0";
                 }
-                ff_stop()
+                uflow_stop()
               </script>
             </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="http://hdl.handle.net/2142/107240">
+                <papertitle>Object Classification Using Range-Doppler Plots from a High Density PMCW MIMO mmWave Radar System</papertitle>
+              </a>
+              <br>
+              <strong>Edwin Pan</strong>
+              <br>
+              <em>IDEALS, </em>Undergraduate Senior Thesis, May 2020  
+              <br>
+              <a href="https://drive.google.com/file/d/1-R5sneYmr30sdPkHCGvj6pNkj4vszQCY/view?usp=sharing">thesis</a>
+              /
+              <a href="https://drive.google.com/file/d/1mEmIItWt0eydrQi0FAuELAWHr0WSLAxT/view?usp=sharing">presentation</a>
+              /
+              <a href="https://github.com/edwin-pan/Borealis">code</a>
+              <br>
+              <p></p>
+              <p>
+                Classification of detections as either running pedestrians or driving cars is achieved using only the range-doppler information from a single forward facing automotive PMCW radar system.
+              </p>
+            </td>
+          </tr> 
+
+
+            <tr onmouseout="flyspin_stop()" onmouseover="flyspin_start()">
+              <td style="padding:20px;width:25%;vertical-align:middle">
+                <div id='flyspin' class='hidden'><img src="images/openradar_rd.gif"></div>
+                <div id='flystill'>
+                  <a href="images/openradar_rd.gif"><img src="images/openradar_rd_snap.gif"></a>
+                </div>
+                <script type="text/javascript">
+                  function flyspin_start() {
+                    document.getElementById('flyspin').style.display = 'inline';
+                    document.getElementById('flystill').style.display = 'none';
+                  }
+  
+                  function flyspin_stop() {
+                    document.getElementById('flyspin').style.display = 'none';
+                    document.getElementById('flystill').style.display = 'inline';
+                  }
+                  flyspin_stop()
+                </script>
+              </td>
             <td style="padding:20px;width:75%;vertical-align:middle">
               <a href="https://arxiv.org/pdf/1912.12395.pdf">
                 <papertitle>OpenRadar: A Toolkit for Prototyping mmWave Radar Applications</papertitle>
@@ -172,26 +214,26 @@
         /
               <a href="https://github.com/PreSenseRadar/OpenRadar">code</a>
               <p></p>
-              <p>Composing neural networks with a simple Fourier feature mapping allows them to learn detailed high-frequency functions.</p>
+              <p>Open source toolkit for improved integration of machine learning with Texas Instruments millimeter wave FMCW radar sensor systems.</p>
             </td>
           </tr> 
-    
-          <tr onmouseout="uflow_stop()" onmouseover="uflow_start()">
+
+          <!-- <tr onmouseout="ff_stop()" onmouseover="ff_start()">
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
-                <div class="two" id='uflow_image'>
-                  <img src='images/uflow_after.png' width="160"></div>
-                <img src='images/uflow_before.jpg' width="160">
+                <div class="two" id='ff_image'>
+                  <img src='images/rd_3d_start.png' width="160"></div>
+                <img src='images/rd_3d_end.png' width="160">
               </div>
               <script type="text/javascript">
-                function uflow_start() {
-                  document.getElementById('uflow_image').style.opacity = "1";
+                function ff_start() {
+                  document.getElementById('ff_image').style.opacity = "1";
                 }
 
-                function uflow_stop() {
-                  document.getElementById('uflow_image').style.opacity = "0";
+                function ff_stop() {
+                  document.getElementById('ff_image').style.opacity = "0";
                 }
-                uflow_stop()
+                ff_stop()
               </script>
             </td>
             <td style="padding:20px;width:75%;vertical-align:middle">
@@ -215,48 +257,8 @@
               Extensive experimentation yields a simple optical flow technique that is trained on only unlabeled videos, but still works as well as supervised techniques.
               </p>
             </td>
-          </tr>  
+          </tr>   -->
 
-          <tr onmouseout="uflow_stop()" onmouseover="uflow_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <div class="two" id='uflow_image'>
-                  <img src='images/uflow_after.png' width="160"></div>
-                <img src='images/uflow_before.jpg' width="160">
-              </div>
-              <script type="text/javascript">
-                function uflow_start() {
-                  document.getElementById('uflow_image').style.opacity = "1";
-                }
-
-                function uflow_stop() {
-                  document.getElementById('uflow_image').style.opacity = "0";
-                }
-                uflow_stop()
-              </script>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://arxiv.org/abs/2006.04902">
-                <papertitle>What Matters in Unsupervised Optical Flow</papertitle>
-              </a>
-              <br>
-              <a href="http://ricojonschkowski.com/">Rico Jonschkowski</a>,
-              <a href="https://www.linkedin.com/in/austin-charles-stone-1ba33b138/">Austin Stone</a>,
-              <strong>Jonathan T. Barron</strong>,
-              <a href="https://research.google/people/ArielGordon/">Ariel Gordon</a>,
-              <a href="https://www.linkedin.com/in/kurt-konolige/">Kurt Konolige</a>,
-              <a href="https://research.google/people/AneliaAngelova/">Anelia Angelova</a>,
-              <br>
-              <em>arXiv</em>, 2020  
-              <br>
-              <a href="https://github.com/google-research/google-research/tree/master/uflow">code</a>
-              <br>
-              <p></p>
-              <p>
-              Extensive experimentation yields a simple optical flow technique that is trained on only unlabeled videos, but still works as well as supervised techniques.
-              </p>
-            </td>
-          </tr> 
         </tbody></table>
 
         <!-- ----- -->
@@ -266,28 +268,28 @@
             <heading>Education</heading>
 
           <colgroup>
+              <col style="width:16%">
               <col style="width:19%">
+              <col style="width:16%">
+              <col style="width:16%">
               <col style="width:17%">
-              <col style="width:16%">
-              <col style="width:16%">
-              <col style="width:16%">
               <col style="width:16%">
           </colgroup>
 
         <tr>
+            <td><img src="images/blank.png" class="scalable"/></td>
             <td><img src="images/SU_Seal_Red.png" class="scalable"/></td>
+            <td><img src="images/blank.png" class="scalable"/></td>
+            <td><img src="images/blank.png" class="scalable"/></td>
             <td><img src="images/uiuc_logo_square.png" class="scalable" /></td>
-            <td><img src="images/blank.png" class="scalable"/></td>
-            <td><img src="images/blank.png" class="scalable"/></td>
-            <td><img src="images/blank.png" class="scalable"/></td>
             <td><img src="images/blank.png" class="scalable"/></td>
         </tr>
         <tr style="text-align: center; font-size: 0.8em">
-            <td valign="top"><a href="https://www.c3sr.com/">Stanford, MS</a><br>2020-present</td>
-            <td valign="top"><a href="https://www.facebook.com/careers/areas-of-work/facebookrealitylabs">UIUC, BS</a><br>2016-2020</td>
+            <td valign="top"><a href=""></a><br></td>
+            <td valign="top"><a href="https://www.stanford.edu/">Stanford University</a><br>Master of Science<br>2020-present</td>
             <td valign="top"><a href=""></a><br></td>
             <td valign="top"><a href=""></a><br></td>
-            <td valign="top"><a href=""></a><br></td>
+            <td valign="top"><a href="https://illinois.edu/">University of Illinois (UIUC)</a><br>Bachelor of Science <br> 2016-2020</td>
             <td valign="top"><a href=""></a><br></td>
         </tr>
         </td>
