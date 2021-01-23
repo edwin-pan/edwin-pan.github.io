@@ -2049,7 +2049,7 @@ input, select, textarea {
 			-webkit-transition: opacity 0.2s ease-in-out;
 			-ms-transition: opacity 0.2s ease-in-out;
 			transition: opacity 0.2s ease-in-out;
-			background: url("images/overlay.png");
+			/* background: url("images/overlay.png"); */
 			border-radius: 0.35em;
 			content: '';
 			display: block;
@@ -2116,7 +2116,8 @@ input, select, textarea {
 		}
 
 		.image.left, .image.right {
-			max-width: 40%;
+			max-width: 25%;
+			background: solid 3px rgba(255, 255, 255, 0.5);
 		}
 
 			.image.left img, .image.right img {
@@ -2146,6 +2147,11 @@ input, select, textarea {
 				width: 100%;
 			}
 
+		.image.square {
+			height: 75px;
+			margin: 0 0 1em 0;
+			width: 10em;
+		}
 /* List */
 
 	ol {
