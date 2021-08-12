@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Virtual Reality | Edwin Pan</title>
+    <link>https://edwin-pan.github.io/tag/virtual-reality/</link>
+      <atom:link href="https://edwin-pan.github.io/tag/virtual-reality/index.xml" rel="self" type="application/rss+xml" />
+    <description>Virtual Reality</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2021 Edwin H Pan. Last Updated: 8/8/2021</copyright><lastBuildDate>Mon, 31 May 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://edwin-pan.github.io/media/icon_hu4b3e5c57071d82c166696f82e07b8121_36942_512x512_fill_lanczos_center_3.png</url>
+      <title>Virtual Reality</title>
+      <link>https://edwin-pan.github.io/tag/virtual-reality/</link>
+    </image>
+    
+    <item>
+      <title>ViPER：Virtual Reality Pose Estimator and Viewer</title>
+      <link>https://edwin-pan.github.io/project/ee267/</link>
+      <pubDate>Mon, 31 May 2021 00:00:00 +0000</pubDate>
+      <guid>https://edwin-pan.github.io/project/ee267/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

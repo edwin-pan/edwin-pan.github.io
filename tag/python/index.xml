@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python | Edwin Pan</title>
+    <link>https://edwin-pan.github.io/tag/python/</link>
+      <atom:link href="https://edwin-pan.github.io/tag/python/index.xml" rel="self" type="application/rss+xml" />
+    <description>Python</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2021 Edwin H Pan. Last Updated: 8/8/2021</copyright><lastBuildDate>Mon, 31 May 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://edwin-pan.github.io/media/icon_hu4b3e5c57071d82c166696f82e07b8121_36942_512x512_fill_lanczos_center_3.png</url>
+      <title>Python</title>
+      <link>https://edwin-pan.github.io/tag/python/</link>
+    </image>
+    
+    <item>
+      <title>ViPER：Virtual Reality Pose Estimator and Viewer</title>
+      <link>https://edwin-pan.github.io/project/ee267/</link>
+      <pubDate>Mon, 31 May 2021 00:00:00 +0000</pubDate>
+      <guid>https://edwin-pan.github.io/project/ee267/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Imitation Learning with iGibson Non-Embodied Demonstrations</title>
+      <link>https://edwin-pan.github.io/project/cs331b/</link>
+      <pubDate>Sat, 15 May 2021 00:00:00 +0000</pubDate>
+      <guid>https://edwin-pan.github.io/project/cs331b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MetaHDR：Model-Agnostic Meta-Learning for HDR Image Reconstruction</title>
+      <link>https://edwin-pan.github.io/project/ee367/</link>
+      <pubDate>Thu, 29 Apr 2021 00:00:00 +0000</pubDate>
+      <guid>https://edwin-pan.github.io/project/ee367/</guid>
+      <description>&lt;p&gt;For more details, please see the report published on ArXiV or refer to the Github repositiory.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Meta-Regularization by Enforcing Mutual-Exclusiveness</title>
+      <link>https://edwin-pan.github.io/project/ee330/</link>
+      <pubDate>Tue, 15 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>https://edwin-pan.github.io/project/ee330/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Generating Segmentation Masks for Autonomous Vehicle Application via Style Transfer Framework</title>
+      <link>https://edwin-pan.github.io/project/cs543/</link>
+      <pubDate>Fri, 15 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://edwin-pan.github.io/project/cs543/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Automotive mmWave FMCW Radar-based Micro-Doppler Signature Feature Extraction and Classification</title>
+      <link>https://edwin-pan.github.io/project/cs598/</link>
+      <pubDate>Tue, 10 Dec 2019 00:00:00 +0000</pubDate>
+      <guid>https://edwin-pan.github.io/project/cs598/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
