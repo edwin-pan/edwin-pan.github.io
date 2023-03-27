@@ -5,7 +5,7 @@
     <link>https://edwin-pan.github.io/category/dog/</link>
       <atom:link href="https://edwin-pan.github.io/category/dog/index.xml" rel="self" type="application/rss+xml" />
     <description>Dog</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2022 Edwin H Pan. Last Updated: 12/14/2022</copyright><lastBuildDate>Sat, 10 Jul 2021 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 10 Jul 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://edwin-pan.github.io/media/icon_hu4b3e5c57071d82c166696f82e07b8121_36942_512x512_fill_lanczos_center_3.png</url>
       <title>Dog</title>
@@ -32,12 +32,17 @@
 
 
 
+
+
+
+
 &lt;figure  id=&#34;figure-yea-my-mom-is-more-athletic-than-i-am-also-apparently-more-athletic-than-pekka-too&#34;&gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;./photo/bossHike.png&#34; alt=&#34;Yea my mom is more athletic than I am. Also, apparently more athletic than Pekka too!&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
   &lt;/div&gt;&lt;figcaption&gt;
       Yea my mom is more athletic than I am. Also, apparently more athletic than Pekka too!
     &lt;/figcaption&gt;&lt;/figure&gt;
+
 </description>
     </item>
     

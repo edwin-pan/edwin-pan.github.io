@@ -5,7 +5,7 @@
     <link>https://edwin-pan.github.io/publication-type/1/</link>
       <atom:link href="https://edwin-pan.github.io/publication-type/1/index.xml" rel="self" type="application/rss+xml" />
     <description>1</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2022 Edwin H Pan. Last Updated: 12/14/2022</copyright><lastBuildDate>Fri, 11 Nov 2022 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 11 Nov 2022 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://edwin-pan.github.io/media/icon_hu4b3e5c57071d82c166696f82e07b8121_36942_512x512_fill_lanczos_center_3.png</url>
       <title>1</title>
@@ -13,15 +13,19 @@
     </image>
     
     <item>
-      <title>Anonymous CVPR 2023 Submission</title>
-      <link>https://edwin-pan.github.io/publication/cvpr2023_sub/</link>
+      <title>Single-Shot Object Action Recognition (SOAR)</title>
+      <link>https://edwin-pan.github.io/publication/soar/</link>
       <pubDate>Fri, 11 Nov 2022 00:00:00 +0000</pubDate>
-      <guid>https://edwin-pan.github.io/publication/cvpr2023_sub/</guid>
-      <description>&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
+      <guid>https://edwin-pan.github.io/publication/soar/</guid>
+      <description>&lt;!-- 
+
+&lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
   &lt;/div&gt;
 &lt;/div&gt;
+
+
 
 
 &lt;div class=&#34;alert alert-note&#34;&gt;
