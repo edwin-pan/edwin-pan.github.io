@@ -20,12 +20,19 @@
         --text-secondary: rgba(17, 24, 39, 0.82);
         --text-muted: rgba(17, 24, 39, 0.62);
         --soft-line: rgba(17, 24, 39, 0.12);
-        --soft-focus: rgba(163, 190, 250, 0.35);
-        --highlight-rose: #f390ca;
-        --highlight-green: #a3d576;
-        --highlight-orange: #ff9365;
-        --highlight-yellow: #ffe15b;
-        --highlight-blue: #a3befa;
+        --soft-focus: rgba(211, 229, 253, 0.45);
+        --highlight-rose: #e8bfbd;
+        --highlight-green: #deedc2;
+        --highlight-orange: #ff8c55;
+        --highlight-yellow: #fee253;
+        --highlight-blue: #d3e5fd;
+        --highlight-purple: #cec7f0;
+        --blob-rose: rgba(232, 191, 189, 0.44);
+        --blob-blue: rgba(211, 229, 253, 0.48);
+        --blob-green: rgba(222, 237, 194, 0.4);
+        --blob-yellow: rgba(254, 226, 83, 0.22);
+        --blob-orange: rgba(255, 140, 85, 0.18);
+        --blob-purple: rgba(206, 199, 240, 0.34);
         --display-size: clamp(3rem, 7vw, 4.5rem);
         --standard-header-size: clamp(1.45rem, 3vw, 1.8rem);
         --statement-body-size: 1.25rem;
@@ -86,7 +93,7 @@
         height: 42rem;
         top: -10%;
         left: -8%;
-        background: radial-gradient(circle at 30% 30%, rgba(243, 144, 202, 0.46), rgba(243, 144, 202, 0) 68%);
+        background: radial-gradient(circle at 30% 30%, var(--blob-rose), rgba(232, 191, 189, 0) 68%);
         animation-duration: 22s;
       }
 
@@ -95,7 +102,7 @@
         height: 40rem;
         top: 8%;
         right: -10%;
-        background: radial-gradient(circle at 40% 35%, rgba(163, 190, 250, 0.44), rgba(163, 190, 250, 0) 70%);
+        background: radial-gradient(circle at 40% 35%, var(--blob-blue), rgba(211, 229, 253, 0) 70%);
         animation-duration: 26s;
       }
 
@@ -104,7 +111,7 @@
         height: 34rem;
         bottom: 12%;
         left: 6%;
-        background: radial-gradient(circle at 45% 40%, rgba(163, 213, 118, 0.36), rgba(163, 213, 118, 0) 70%);
+        background: radial-gradient(circle at 45% 40%, var(--blob-green), rgba(222, 237, 194, 0) 70%);
         animation-duration: 24s;
       }
 
@@ -113,7 +120,7 @@
         height: 32rem;
         bottom: -6%;
         right: 12%;
-        background: radial-gradient(circle at 45% 40%, rgba(255, 225, 91, 0.3), rgba(255, 225, 91, 0) 72%);
+        background: radial-gradient(circle at 45% 40%, var(--blob-yellow), rgba(254, 226, 83, 0) 72%);
         animation-duration: 28s;
       }
 
@@ -122,8 +129,17 @@
         height: 26rem;
         top: 42%;
         left: 38%;
-        background: radial-gradient(circle at 45% 45%, rgba(255, 147, 101, 0.18), rgba(255, 147, 101, 0) 74%);
+        background: radial-gradient(circle at 45% 45%, var(--blob-orange), rgba(255, 140, 85, 0) 74%);
         animation-duration: 30s;
+      }
+
+      .gradient-blob.purple {
+        width: 30rem;
+        height: 30rem;
+        top: 38%;
+        right: 24%;
+        background: radial-gradient(circle at 45% 45%, var(--blob-purple), rgba(206, 199, 240, 0) 72%);
+        animation-duration: 27s;
       }
 
       main {
@@ -156,13 +172,13 @@
 
       a:hover {
         color: var(--text-primary);
-        border-color: rgba(243, 144, 202, 0.7);
-        background-color: rgba(243, 144, 202, 0.08);
+        border-color: rgba(232, 191, 189, 0.7);
+        background-color: rgba(232, 191, 189, 0.08);
       }
 
       a:focus-visible {
         outline: none;
-        border-color: rgba(163, 190, 250, 0.95);
+        border-color: rgba(211, 229, 253, 0.95);
         box-shadow: 0 0 0 4px var(--soft-focus);
         border-radius: 0.45rem;
       }
@@ -434,6 +450,7 @@
       <span class="gradient-blob green"></span>
       <span class="gradient-blob yellow"></span>
       <span class="gradient-blob orange"></span>
+      <span class="gradient-blob purple"></span>
     </div>
 
     <main>
@@ -496,11 +513,11 @@
                 <div class="entry-topline">
                   <p class="entry-title">
                     <a href="https://iprl.stanford.edu/index.html#home" target="_blank" rel="noreferrer noopener"
-                      >Stanford IPRL</a
+                      >Stanford IPRL Lab</a
                     >
                   </p>
                 </div>
-                <p class="standard-body entry-summary">Past research affiliation at Stanford.</p>
+                <p class="standard-body entry-summary">Computer vision &amp; robotics research</p>
               </article>
 
               <article class="entry">
@@ -511,7 +528,7 @@
                     >
                   </p>
                 </div>
-                <p class="standard-body entry-summary">Past research affiliation in Stanford medicine.</p>
+                <p class="standard-body entry-summary">Computer vision in healthcare research</p>
               </article>
             </div>
 
@@ -520,19 +537,19 @@
               <article class="entry">
                 <div class="entry-topline">
                   <p class="entry-title">
-                    <a href="https://pear.vc" target="_blank" rel="noreferrer noopener">Pear VC</a>
+                    <a href="https://scale.com" target="_blank" rel="noreferrer noopener">Scale AI</a>
                   </p>
                 </div>
-                <p class="standard-body entry-summary">Past professional affiliation supporting early-stage company building.</p>
+                <p class="standard-body entry-summary">Frontier AI evaluations and products</p>
               </article>
 
               <article class="entry">
                 <div class="entry-topline">
                   <p class="entry-title">
-                    <a href="https://scale.com" target="_blank" rel="noreferrer noopener">Scale AI</a>
+                    <a href="https://pear.vc" target="_blank" rel="noreferrer noopener">Pear VC</a>
                   </p>
                 </div>
-                <p class="standard-body entry-summary">Past professional affiliation across applied AI systems and products.</p>
+                <p class="standard-body entry-summary">Founding an early-stage company</p>
               </article>
             </div>
           </div>
@@ -549,7 +566,7 @@
               </p>
               <span class="entry-tag">Evaluation</span>
             </div>
-            <p class="standard-body entry-summary">Work on evaluating software engineering systems at a more demanding level.</p>
+            <p class="standard-body entry-summary">Realistic evaluations of AI agents for software engineering.</p>
           </article>
 
           <article class="entry">
@@ -559,7 +576,7 @@
               </p>
               <span class="entry-tag">Open source</span>
             </div>
-            <p class="standard-body entry-summary">An open-source radar project that reflects an earlier research and engineering arc.</p>
+            <p class="standard-body entry-summary">An open-source project enabling ML on proprietary radar signals.</p>
           </article>
         </div>
       </section>
