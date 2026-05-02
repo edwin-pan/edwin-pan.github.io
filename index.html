@@ -228,6 +228,7 @@
         flex-wrap: wrap;
         align-items: center;
         gap: 3px;
+        perspective: 640px;
       }
 
       .split-flap__tile {
@@ -249,6 +250,24 @@
         line-height: 1;
         letter-spacing: 0.08em;
         text-transform: uppercase;
+        transform-style: preserve-3d;
+      }
+
+      .split-flap__tile::before {
+        content: attr(data-next);
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: inherit;
+        background: inherit;
+        color: inherit;
+        opacity: 0;
+        transform: rotateX(86deg);
+        transform-origin: center;
+        backface-visibility: hidden;
       }
 
       .split-flap__tile::after {
@@ -258,11 +277,29 @@
         top: 50%;
         height: 1px;
         background: rgba(17, 24, 39, 0.08);
+        z-index: 3;
       }
 
       .split-flap__tile > span {
         position: relative;
         z-index: 1;
+        backface-visibility: hidden;
+      }
+
+      .split-flap__tile.is-flipping {
+        border-color: var(--soft-line-strong);
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.96),
+          0 4px 12px rgba(17, 24, 39, 0.06);
+      }
+
+      .split-flap__tile.is-flipping > span {
+        animation: flapCurrent 420ms cubic-bezier(0.2, 0.8, 0.2, 1);
+        transform-origin: center;
+      }
+
+      .split-flap__tile.is-flipping::before {
+        animation: flapNext 420ms cubic-bezier(0.2, 0.8, 0.2, 1);
       }
 
       .split-flap__tile.accent-yellow {
@@ -401,6 +438,42 @@
         }
       }
 
+      @keyframes flapCurrent {
+        0% {
+          opacity: 1;
+          transform: rotateX(0deg);
+        }
+
+        46% {
+          opacity: 0.72;
+          transform: rotateX(-86deg);
+        }
+
+        47%,
+        100% {
+          opacity: 0;
+          transform: rotateX(-90deg);
+        }
+      }
+
+      @keyframes flapNext {
+        0%,
+        46% {
+          opacity: 0;
+          transform: rotateX(86deg);
+        }
+
+        47% {
+          opacity: 0.72;
+          transform: rotateX(86deg);
+        }
+
+        100% {
+          opacity: 1;
+          transform: rotateX(0deg);
+        }
+      }
+
       @media (max-width: 860px) {
         :root {
           --page-width: min(960px, calc(100% - 2rem));
@@ -477,9 +550,19 @@
     <main>
       <header class="hero">
         <div class="hero-copy">
-          <div class="split-flap hero-marker" role="img" aria-label="AGI">
-            <span class="split-flap__tile accent-yellow" aria-hidden="true"><span>A</span></span>
-            <span class="split-flap__tile" aria-hidden="true"><span>G</span></span>
+          <div
+            class="split-flap hero-marker"
+            role="img"
+            aria-label="OpenAI"
+            data-flip-phrases="OPENAI|AGENTS|SAFETY|FUTURE"
+            data-flip-interval="3400"
+            data-flip-accent="yellow"
+          >
+            <span class="split-flap__tile accent-yellow" aria-hidden="true"><span>O</span></span>
+            <span class="split-flap__tile" aria-hidden="true"><span>P</span></span>
+            <span class="split-flap__tile" aria-hidden="true"><span>E</span></span>
+            <span class="split-flap__tile" aria-hidden="true"><span>N</span></span>
+            <span class="split-flap__tile" aria-hidden="true"><span>A</span></span>
             <span class="split-flap__tile" aria-hidden="true"><span>I</span></span>
           </div>
           <h1 class="display">Edwin Pan</h1>
@@ -507,7 +590,15 @@
           <div class="portrait-frame">
             <img src="assets/profile_photo.jpeg" alt="Portrait of Edwin Pan" />
           </div>
-          <div class="split-flap hero-signal" role="img" aria-label="Agents">
+          <div
+            class="split-flap hero-signal"
+            role="img"
+            aria-label="Agents"
+            data-flip-phrases="AGENTS|IDEAS|DECADE|SAFETY"
+            data-flip-interval="3900"
+            data-flip-delay="900"
+            data-flip-accent="blue"
+          >
             <span class="split-flap__tile accent-blue" aria-hidden="true"><span>A</span></span>
             <span class="split-flap__tile" aria-hidden="true"><span>G</span></span>
             <span class="split-flap__tile" aria-hidden="true"><span>E</span></span>
@@ -629,7 +720,15 @@
               <p class="entry-title">
                 <a href="https://scale.com/research/swe_bench_pro" target="_blank" rel="noreferrer noopener">SWE Bench Pro</a>
               </p>
-              <span class="entry-tag split-flap entry-flap" role="img" aria-label="Evaluation">
+              <span
+                class="entry-tag split-flap entry-flap"
+                role="img"
+                aria-label="Evaluation"
+                data-flip-phrases="EVAL|AGNT|SWE"
+                data-flip-interval="5200"
+                data-flip-delay="1300"
+                data-flip-accent="yellow"
+              >
                 <span class="split-flap__tile accent-yellow" aria-hidden="true"><span>E</span></span>
                 <span class="split-flap__tile" aria-hidden="true"><span>V</span></span>
                 <span class="split-flap__tile" aria-hidden="true"><span>A</span></span>
@@ -644,7 +743,15 @@
               <p class="entry-title">
                 <a href="https://github.com/PreSenseRadar/OpenRadar" target="_blank" rel="noreferrer noopener">OpenRadar</a>
               </p>
-              <span class="entry-tag split-flap entry-flap" role="img" aria-label="Open source">
+              <span
+                class="entry-tag split-flap entry-flap"
+                role="img"
+                aria-label="Open source"
+                data-flip-phrases="OSS|RADAR|ML"
+                data-flip-interval="5600"
+                data-flip-delay="1800"
+                data-flip-accent="blue"
+              >
                 <span class="split-flap__tile accent-blue" aria-hidden="true"><span>O</span></span>
                 <span class="split-flap__tile" aria-hidden="true"><span>S</span></span>
                 <span class="split-flap__tile" aria-hidden="true"><span>S</span></span>
@@ -665,5 +772,136 @@
         <span>© 2025 Edwin Pan. Made with &lt;3 with Codex.</span>
       </footer>
     </main>
+
+    <script>
+      (() => {
+        const boards = Array.from(document.querySelectorAll(".split-flap[data-flip-phrases]"));
+
+        if (!boards.length) {
+          return;
+        }
+
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const blank = "\u00a0";
+        const displayChar = (char) => (char === " " ? blank : char);
+        const cleanPhrase = (phrase) => phrase.trim().toUpperCase();
+
+        const makeTile = (char, accent) => {
+          const tile = document.createElement("span");
+          const face = document.createElement("span");
+
+          tile.className = "split-flap__tile";
+          tile.setAttribute("aria-hidden", "true");
+
+          if (accent) {
+            tile.classList.add(`accent-${accent}`);
+          }
+
+          face.textContent = displayChar(char);
+          tile.dataset.char = char;
+          tile.append(face);
+
+          return tile;
+        };
+
+        const normalizePhrase = (phrase, length) => cleanPhrase(phrase).padEnd(length, " ").slice(0, length);
+
+        boards.forEach((board, boardIndex) => {
+          const phrases = board.dataset.flipPhrases
+            .split("|")
+            .map(cleanPhrase)
+            .filter(Boolean);
+
+          if (!phrases.length) {
+            return;
+          }
+
+          const tileCount = Math.max(...phrases.map((phrase) => phrase.length));
+          const accent = board.dataset.flipAccent || "";
+          const normalizedPhrases = phrases.map((phrase) => normalizePhrase(phrase, tileCount));
+          let currentIndex = 0;
+          let activeTimers = [];
+
+          board.replaceChildren(
+            ...Array.from(normalizedPhrases[0], (char, index) => makeTile(char, index === 0 ? accent : ""))
+          );
+          board.setAttribute("aria-label", normalizedPhrases[0].trim());
+
+          const clearTimers = () => {
+            activeTimers.forEach((timer) => window.clearTimeout(timer));
+            activeTimers = [];
+          };
+
+          const setPhrase = (phrase, animate) => {
+            const tiles = Array.from(board.querySelectorAll(".split-flap__tile"));
+            const chars = Array.from(phrase);
+
+            board.setAttribute("aria-label", phrase.trim());
+            clearTimers();
+            tiles.forEach((tile) => {
+              tile.classList.remove("is-flipping");
+              tile.removeAttribute("data-next");
+            });
+
+            chars.forEach((char, index) => {
+              const tile = tiles[index];
+
+              if (!tile || tile.dataset.char === char) {
+                return;
+              }
+
+              const face = tile.querySelector("span");
+
+              if (!face) {
+                return;
+              }
+
+              const updateFace = () => {
+                face.textContent = displayChar(char);
+                tile.dataset.char = char;
+              };
+
+              const finishFlip = () => {
+                tile.classList.remove("is-flipping");
+                tile.removeAttribute("data-next");
+              };
+
+              if (!animate || reduceMotion) {
+                updateFace();
+                finishFlip();
+                return;
+              }
+
+              activeTimers.push(
+                window.setTimeout(() => {
+                  tile.dataset.next = displayChar(char);
+                  tile.classList.add("is-flipping");
+
+                  activeTimers.push(window.setTimeout(updateFace, 190));
+                  activeTimers.push(window.setTimeout(finishFlip, 430));
+                }, index * 74)
+              );
+            });
+          };
+
+          if (normalizedPhrases.length < 2) {
+            return;
+          }
+
+          const advance = () => {
+            currentIndex = (currentIndex + 1) % normalizedPhrases.length;
+            setPhrase(normalizedPhrases[currentIndex], true);
+          };
+
+          const interval = Number(board.dataset.flipInterval || 4200);
+          const delay = Number(board.dataset.flipDelay || boardIndex * 240);
+
+          window.setTimeout(() => {
+            advance();
+            window.setInterval(advance, interval);
+          }, interval + delay);
+        });
+      })();
+    </script>
   </body>
 </html>

@@ -173,7 +173,7 @@ Use the motif for:
 - Section markers or compact labels.
 - A small hero-side detail, such as initials or current focus.
 - Project tags and affiliation categories.
-- Optional loading or hover states if the site later gains interaction.
+- Functional flip boards that rotate through a small, controlled phrase set.
 
 Do not use the motif for:
 
@@ -201,6 +201,17 @@ Recommended treatments:
 - `Active`: yellow top border or yellow tile background with dark text.
 - `Technical`: blue border or blue dot for research/project labels.
 - `Warm`: rose or orange micro-accent for personal details.
+
+Functional behavior:
+
+- A functioning board should rotate through two to five short phrases, not arbitrary text.
+- Keep phrases the same visual width when possible; pad shorter words with blank tiles.
+- Flip letters individually with a subtle stagger of roughly `50-80ms` per tile.
+- Keep each tile flip around `360-480ms`.
+- Use one primary auto-rotating board in the hero and only a few quieter secondary boards.
+- Update the board's accessible label as the visible phrase changes.
+- Respect `prefers-reduced-motion`; reduced-motion users can receive instant phrase changes without a flip animation.
+- Do not flip so often that the board distracts from reading the page. A `3.4-5.6s` interval is the right range.
 
 Suggested CSS sketch:
 
@@ -325,7 +336,7 @@ Avoid:
 - Keep white as the dominant visual field.
 - Use the approved accent palette only.
 - Replace dark TV-style contrast with light surfaces, black text, and soft accent signals.
-- Include the light split-flap motif as a recurring but sparse pattern.
+- Include the light split-flap motif as a recurring but sparse pattern, with at least one functional board.
 - Preserve the organic gradient as atmosphere.
 - Introduce compact uppercase metadata labels.
 - Use thin dividers and small-radius repeated rows for structure.
