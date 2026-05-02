@@ -14,27 +14,23 @@
 
       :root {
         color-scheme: light;
-        --background-base: #fcfaf7;
-        --surface-wash: rgba(255, 255, 255, 0.52);
+        --background-base: #ffffff;
+        --background-warm: #fcfaf7;
+        --surface-wash: rgba(255, 255, 255, 0.78);
+        --surface-solid: #ffffff;
         --text-primary: #111827;
-        --text-secondary: rgba(17, 24, 39, 0.82);
-        --text-muted: rgba(17, 24, 39, 0.62);
+        --text-secondary: rgba(17, 24, 39, 0.76);
+        --text-muted: rgba(17, 24, 39, 0.56);
         --soft-line: rgba(17, 24, 39, 0.12);
-        --soft-focus: rgba(211, 229, 253, 0.45);
-        --highlight-rose: #e8bfbd;
-        --highlight-green: #deedc2;
-        --highlight-orange: #ff8c55;
-        --highlight-yellow: #fee253;
-        --highlight-blue: #d3e5fd;
-        --highlight-purple: #cec7f0;
-        --blob-rose: rgba(232, 191, 189, 0.44);
-        --blob-blue: rgba(211, 229, 253, 0.48);
-        --blob-green: rgba(222, 237, 194, 0.4);
-        --blob-yellow: rgba(254, 226, 83, 0.22);
-        --blob-orange: rgba(255, 140, 85, 0.18);
-        --blob-purple: rgba(206, 199, 240, 0.34);
-        --display-size: clamp(3rem, 7vw, 4.5rem);
-        --standard-header-size: clamp(1.45rem, 3vw, 1.8rem);
+        --soft-line-strong: rgba(17, 24, 39, 0.18);
+        --soft-focus: rgba(163, 190, 250, 0.36);
+        --highlight-rose: #f390ca;
+        --highlight-green: #a3d576;
+        --highlight-orange: #ff9365;
+        --highlight-yellow: #ffe15b;
+        --highlight-blue: #a3befa;
+        --display-size: 4.5rem;
+        --standard-header-size: 1.75rem;
         --statement-body-size: 1.25rem;
         --standard-body-size: 1rem;
         --small-callout-size: 0.92rem;
@@ -55,7 +51,7 @@
         position: relative;
         overflow-x: hidden;
         font-family: "Nunito", "Helvetica Neue", Helvetica, Arial, sans-serif;
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0.6), rgba(252, 250, 247, 0.92)),
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(252, 250, 247, 0.82)),
           var(--background-base);
         color: var(--text-primary);
       }
@@ -65,81 +61,26 @@
         position: fixed;
         inset: 0;
         background:
-          radial-gradient(circle at top, rgba(255, 255, 255, 0.6), transparent 58%),
-          linear-gradient(180deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.58));
+          radial-gradient(circle at top, rgba(255, 255, 255, 0.86), transparent 56%),
+          linear-gradient(180deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.72));
         pointer-events: none;
         z-index: 0;
       }
 
       .gradient-field {
         position: fixed;
-        inset: -18%;
+        inset: -14%;
         pointer-events: none;
         z-index: 0;
         overflow: hidden;
-      }
-
-      .gradient-blob {
-        position: absolute;
-        border-radius: 50%;
-        opacity: 0.62;
-        filter: blur(18px);
-        transform-origin: center;
-        animation: drift 20s ease-in-out infinite alternate;
-      }
-
-      .gradient-blob.rose {
-        width: 42rem;
-        height: 42rem;
-        top: -10%;
-        left: -8%;
-        background: radial-gradient(circle at 30% 30%, var(--blob-rose), rgba(232, 191, 189, 0) 68%);
-        animation-duration: 22s;
-      }
-
-      .gradient-blob.blue {
-        width: 40rem;
-        height: 40rem;
-        top: 8%;
-        right: -10%;
-        background: radial-gradient(circle at 40% 35%, var(--blob-blue), rgba(211, 229, 253, 0) 70%);
-        animation-duration: 26s;
-      }
-
-      .gradient-blob.green {
-        width: 34rem;
-        height: 34rem;
-        bottom: 12%;
-        left: 6%;
-        background: radial-gradient(circle at 45% 40%, var(--blob-green), rgba(222, 237, 194, 0) 70%);
-        animation-duration: 24s;
-      }
-
-      .gradient-blob.yellow {
-        width: 32rem;
-        height: 32rem;
-        bottom: -6%;
-        right: 12%;
-        background: radial-gradient(circle at 45% 40%, var(--blob-yellow), rgba(254, 226, 83, 0) 72%);
-        animation-duration: 28s;
-      }
-
-      .gradient-blob.orange {
-        width: 26rem;
-        height: 26rem;
-        top: 42%;
-        left: 38%;
-        background: radial-gradient(circle at 45% 45%, var(--blob-orange), rgba(255, 140, 85, 0) 74%);
-        animation-duration: 30s;
-      }
-
-      .gradient-blob.purple {
-        width: 30rem;
-        height: 30rem;
-        top: 38%;
-        right: 24%;
-        background: radial-gradient(circle at 45% 45%, var(--blob-purple), rgba(206, 199, 240, 0) 72%);
-        animation-duration: 27s;
+        background:
+          radial-gradient(ellipse at 12% 8%, rgba(243, 144, 202, 0.28), transparent 36%),
+          radial-gradient(ellipse at 88% 12%, rgba(163, 190, 250, 0.3), transparent 38%),
+          radial-gradient(ellipse at 18% 82%, rgba(163, 213, 118, 0.22), transparent 34%),
+          radial-gradient(ellipse at 78% 74%, rgba(255, 225, 91, 0.18), transparent 36%),
+          radial-gradient(ellipse at 52% 48%, rgba(255, 147, 101, 0.13), transparent 42%);
+        filter: blur(14px);
+        animation: drift 30s ease-in-out infinite alternate;
       }
 
       main {
@@ -186,14 +127,14 @@
       .display {
         font-size: var(--display-size);
         line-height: 1;
-        letter-spacing: -0.035em;
+        letter-spacing: 0;
         font-weight: 700;
       }
 
       .standard-header {
         font-size: var(--standard-header-size);
         line-height: 1.15;
-        letter-spacing: -0.02em;
+        letter-spacing: 0;
         font-weight: 600;
       }
 
@@ -226,8 +167,12 @@
       .hero-copy {
         display: flex;
         flex-direction: column;
-        gap: 1rem;
+        gap: 0.95rem;
         max-width: 40rem;
+      }
+
+      .hero-marker {
+        margin-bottom: 0.25rem;
       }
 
       .intro-detail {
@@ -249,18 +194,21 @@
       }
 
       .portrait-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
         justify-self: end;
         width: min(100%, 220px);
       }
 
       .portrait-frame {
         position: relative;
-        border-radius: 28px;
+        border-radius: 14px;
         overflow: hidden;
         padding: 0.45rem;
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.38));
-        border: 1px solid rgba(255, 255, 255, 0.48);
-        box-shadow: 0 18px 40px rgba(17, 24, 39, 0.08);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.62));
+        border: 1px solid rgba(17, 24, 39, 0.1);
+        box-shadow: 0 16px 32px rgba(17, 24, 39, 0.07);
         backdrop-filter: blur(10px);
       }
 
@@ -268,7 +216,83 @@
         aspect-ratio: 1 / 1;
         width: 100%;
         object-fit: cover;
-        border-radius: 22px;
+        border-radius: 9px;
+      }
+
+      .hero-signal {
+        align-self: flex-start;
+      }
+
+      .split-flap {
+        display: inline-flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 3px;
+      }
+
+      .split-flap__tile {
+        position: relative;
+        min-width: 1.55rem;
+        height: 1.55rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 0.36rem;
+        overflow: hidden;
+        border: 1px solid var(--soft-line);
+        border-radius: 5px;
+        background: rgba(255, 255, 255, 0.84);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.92);
+        color: var(--text-primary);
+        font-size: 0.72rem;
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .split-flap__tile::after {
+        content: "";
+        position: absolute;
+        inset-inline: 0;
+        top: 50%;
+        height: 1px;
+        background: rgba(17, 24, 39, 0.08);
+      }
+
+      .split-flap__tile > span {
+        position: relative;
+        z-index: 1;
+      }
+
+      .split-flap__tile.accent-yellow {
+        border-color: rgba(255, 225, 91, 0.9);
+        background: rgba(255, 225, 91, 0.3);
+      }
+
+      .split-flap__tile.accent-blue {
+        border-color: rgba(163, 190, 250, 0.86);
+        background: rgba(163, 190, 250, 0.18);
+      }
+
+      .split-flap__tile.accent-rose {
+        border-color: rgba(243, 144, 202, 0.76);
+        background: rgba(243, 144, 202, 0.14);
+      }
+
+      .split-flap__tile.accent-green {
+        border-color: rgba(163, 213, 118, 0.78);
+        background: rgba(163, 213, 118, 0.16);
+      }
+
+      .split-flap.section-flap {
+        margin-bottom: 0.75rem;
+      }
+
+      .split-flap.entry-flap .split-flap__tile {
+        min-width: 1.32rem;
+        height: 1.32rem;
+        font-size: 0.62rem;
       }
 
       section {
@@ -292,11 +316,18 @@
       .entry-list {
         display: flex;
         flex-direction: column;
-        gap: 1rem;
+        gap: 0;
       }
 
       .entry {
-        padding: 0.15rem 0;
+        position: relative;
+        padding: 0.9rem 0;
+        border-top: 1px solid rgba(17, 24, 39, 0.08);
+      }
+
+      .entry:first-child {
+        padding-top: 0.15rem;
+        border-top: 0;
       }
 
       .entry-topline {
@@ -318,15 +349,7 @@
       }
 
       .entry-tag {
-        font-size: 0.78rem;
-        line-height: 1.25;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-        color: rgba(17, 24, 39, 0.56);
-        padding: 0.28rem 0.55rem;
-        border-radius: 999px;
-        background: rgba(255, 255, 255, 0.42);
-        border: 1px solid rgba(17, 24, 39, 0.08);
+        flex: 0 0 auto;
       }
 
       .entry-summary {
@@ -347,18 +370,18 @@
       .entry-group {
         display: flex;
         flex-direction: column;
-        gap: 0.85rem;
+        gap: 0;
       }
 
       .section-label {
-        font-size: 0.88rem;
-        line-height: 1.4;
-        font-weight: 700;
-        letter-spacing: 0.04em;
-        color: rgba(17, 24, 39, 0.58);
+        margin-bottom: 0.75rem;
       }
 
       footer {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.7rem;
         margin-top: 3rem;
         padding-top: 1.5rem;
         border-top: 1px solid var(--soft-line);
@@ -381,6 +404,7 @@
       @media (max-width: 860px) {
         :root {
           --page-width: min(960px, calc(100% - 2rem));
+          --display-size: 3.7rem;
         }
 
         .hero {
@@ -405,14 +429,12 @@
       @media (max-width: 640px) {
         :root {
           --page-width: min(960px, calc(100% - 1.5rem));
+          --display-size: 3.15rem;
+          --standard-header-size: 1.55rem;
         }
 
         .gradient-field {
-          inset: -30%;
-        }
-
-        .gradient-blob {
-          opacity: 0.74;
+          inset: -28%;
         }
 
         .hero-copy {
@@ -425,6 +447,12 @@
 
         .portrait-wrap {
           width: min(180px, 48vw);
+        }
+
+        .split-flap__tile {
+          min-width: 1.42rem;
+          height: 1.42rem;
+          font-size: 0.66rem;
         }
       }
 
@@ -444,18 +472,16 @@
     </style>
   </head>
   <body>
-    <div class="gradient-field" aria-hidden="true">
-      <span class="gradient-blob rose"></span>
-      <span class="gradient-blob blue"></span>
-      <span class="gradient-blob green"></span>
-      <span class="gradient-blob yellow"></span>
-      <span class="gradient-blob orange"></span>
-      <span class="gradient-blob purple"></span>
-    </div>
+    <div class="gradient-field" aria-hidden="true"></div>
 
     <main>
       <header class="hero">
         <div class="hero-copy">
+          <div class="split-flap hero-marker" role="img" aria-label="AGI">
+            <span class="split-flap__tile accent-yellow" aria-hidden="true"><span>A</span></span>
+            <span class="split-flap__tile" aria-hidden="true"><span>G</span></span>
+            <span class="split-flap__tile" aria-hidden="true"><span>I</span></span>
+          </div>
           <h1 class="display">Edwin Pan</h1>
           <p class="statement-body">Hi! I'm Edwin, and I'm excited about AGI that benefits all of humanity.</p>
           <p class="standard-body intro-detail">
@@ -481,11 +507,26 @@
           <div class="portrait-frame">
             <img src="assets/profile_photo.jpeg" alt="Portrait of Edwin Pan" />
           </div>
+          <div class="split-flap hero-signal" role="img" aria-label="Agents">
+            <span class="split-flap__tile accent-blue" aria-hidden="true"><span>A</span></span>
+            <span class="split-flap__tile" aria-hidden="true"><span>G</span></span>
+            <span class="split-flap__tile" aria-hidden="true"><span>E</span></span>
+            <span class="split-flap__tile" aria-hidden="true"><span>N</span></span>
+            <span class="split-flap__tile" aria-hidden="true"><span>T</span></span>
+            <span class="split-flap__tile" aria-hidden="true"><span>S</span></span>
+          </div>
         </div>
       </header>
 
       <section aria-labelledby="education-heading">
-        <h2 class="standard-header" id="education-heading">Education</h2>
+        <div>
+          <div class="split-flap section-flap" role="img" aria-label="Education">
+            <span class="split-flap__tile accent-green" aria-hidden="true"><span>E</span></span>
+            <span class="split-flap__tile" aria-hidden="true"><span>D</span></span>
+            <span class="split-flap__tile" aria-hidden="true"><span>U</span></span>
+          </div>
+          <h2 class="standard-header" id="education-heading">Education</h2>
+        </div>
         <div class="section-content entry-list">
           <article class="entry">
             <div class="entry-topline">
@@ -504,11 +545,23 @@
       </section>
 
       <section aria-labelledby="affiliations-heading">
-        <h2 class="standard-header" id="affiliations-heading">Past affiliations</h2>
+        <div>
+          <div class="split-flap section-flap" role="img" aria-label="Affiliations">
+            <span class="split-flap__tile accent-rose" aria-hidden="true"><span>A</span></span>
+            <span class="split-flap__tile" aria-hidden="true"><span>F</span></span>
+            <span class="split-flap__tile" aria-hidden="true"><span>F</span></span>
+          </div>
+          <h2 class="standard-header" id="affiliations-heading">Past affiliations</h2>
+        </div>
         <div class="section-content">
           <div class="entry-groups">
             <div class="entry-group">
-              <p class="section-label">Academic</p>
+              <div class="section-label split-flap" role="img" aria-label="Labs">
+                <span class="split-flap__tile accent-blue" aria-hidden="true"><span>L</span></span>
+                <span class="split-flap__tile" aria-hidden="true"><span>A</span></span>
+                <span class="split-flap__tile" aria-hidden="true"><span>B</span></span>
+                <span class="split-flap__tile" aria-hidden="true"><span>S</span></span>
+              </div>
               <article class="entry">
                 <div class="entry-topline">
                   <p class="entry-title">
@@ -533,7 +586,12 @@
             </div>
 
             <div class="entry-group">
-              <p class="section-label">Professional</p>
+              <div class="section-label split-flap" role="img" aria-label="Work">
+                <span class="split-flap__tile accent-yellow" aria-hidden="true"><span>W</span></span>
+                <span class="split-flap__tile" aria-hidden="true"><span>O</span></span>
+                <span class="split-flap__tile" aria-hidden="true"><span>R</span></span>
+                <span class="split-flap__tile" aria-hidden="true"><span>K</span></span>
+              </div>
               <article class="entry">
                 <div class="entry-topline">
                   <p class="entry-title">
@@ -557,14 +615,26 @@
       </section>
 
       <section aria-labelledby="work-heading">
-        <h2 class="standard-header" id="work-heading">Selected work</h2>
+        <div>
+          <div class="split-flap section-flap" role="img" aria-label="Projects">
+            <span class="split-flap__tile accent-orange" aria-hidden="true"><span>P</span></span>
+            <span class="split-flap__tile" aria-hidden="true"><span>R</span></span>
+            <span class="split-flap__tile" aria-hidden="true"><span>J</span></span>
+          </div>
+          <h2 class="standard-header" id="work-heading">Selected work</h2>
+        </div>
         <div class="section-content entry-list">
           <article class="entry">
             <div class="entry-topline">
               <p class="entry-title">
                 <a href="https://scale.com/research/swe_bench_pro" target="_blank" rel="noreferrer noopener">SWE Bench Pro</a>
               </p>
-              <span class="entry-tag">Evaluation</span>
+              <span class="entry-tag split-flap entry-flap" role="img" aria-label="Evaluation">
+                <span class="split-flap__tile accent-yellow" aria-hidden="true"><span>E</span></span>
+                <span class="split-flap__tile" aria-hidden="true"><span>V</span></span>
+                <span class="split-flap__tile" aria-hidden="true"><span>A</span></span>
+                <span class="split-flap__tile" aria-hidden="true"><span>L</span></span>
+              </span>
             </div>
             <p class="standard-body entry-summary">Realistic evaluations of AI agents for software engineering.</p>
           </article>
@@ -574,14 +644,26 @@
               <p class="entry-title">
                 <a href="https://github.com/PreSenseRadar/OpenRadar" target="_blank" rel="noreferrer noopener">OpenRadar</a>
               </p>
-              <span class="entry-tag">Open source</span>
+              <span class="entry-tag split-flap entry-flap" role="img" aria-label="Open source">
+                <span class="split-flap__tile accent-blue" aria-hidden="true"><span>O</span></span>
+                <span class="split-flap__tile" aria-hidden="true"><span>S</span></span>
+                <span class="split-flap__tile" aria-hidden="true"><span>S</span></span>
+              </span>
             </div>
             <p class="standard-body entry-summary">An open-source project enabling ML on proprietary radar signals.</p>
           </article>
         </div>
       </section>
 
-      <footer class="small-callout">© 2025 Edwin Pan. Made with &lt;3 with Codex.</footer>
+      <footer class="small-callout">
+        <span class="split-flap entry-flap" role="img" aria-label="2025">
+          <span class="split-flap__tile accent-green" aria-hidden="true"><span>2</span></span>
+          <span class="split-flap__tile" aria-hidden="true"><span>0</span></span>
+          <span class="split-flap__tile" aria-hidden="true"><span>2</span></span>
+          <span class="split-flap__tile" aria-hidden="true"><span>5</span></span>
+        </span>
+        <span>© 2025 Edwin Pan. Made with &lt;3 with Codex.</span>
+      </footer>
     </main>
   </body>
 </html>
