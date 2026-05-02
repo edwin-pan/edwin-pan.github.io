@@ -1,6 +1,6 @@
 # Edwin Pan brand guidelines
 
-These guidelines define a light-mode visual system for the personal site. The direction blends the site's existing academic restraint and organic gradient field with a product-system sensibility inspired by [Better Design's TV Style reference](https://www.better-design.com/design-systems/tv-style): compact surfaces, crisp typographic structure, small uppercase labels, tight component geometry, visible divider rhythm, and restrained signal color.
+These guidelines define a light-mode visual system for the personal site. The direction blends the site's existing academic restraint and organic gradient field with a product-system sensibility inspired by [Better Design's TV Style reference](https://www.better-design.com/design-systems/tv-style): compact surfaces, crisp typographic structure, small uppercase labels, tight component geometry, visible divider rhythm, a light split-flap motif, and restrained signal color.
 
 ## Brand character
 
@@ -20,6 +20,7 @@ Primary qualities:
 Borrow:
 
 - Tile rhythm: repeated compact units, thin dividers, and subtle "seam" lines.
+- Light split-flap modules: white tiles with midpoint hairlines, compact labels, and restrained accent states.
 - Tight radii: small corners on chips, cards, buttons, and image frames.
 - Label discipline: small uppercase metadata labels with generous tracking.
 - Strong typographic confidence: Helvetica-inspired forms, dense but readable.
@@ -140,6 +141,7 @@ Reference-inspired layout motifs:
 - Repeated rows for affiliations and projects.
 - Tiny accent squares or dots for list grouping.
 - Thin horizontal seams through cards, link rows, or portrait framing.
+- Small split-flap tile groups for metadata, initials, dates, project tags, and section markers.
 - Compact link clusters with understated hover states.
 
 ## Surfaces and borders
@@ -160,6 +162,100 @@ Avoid:
 - Nested cards.
 - Heavy drop shadows.
 - Frosted panels that make text harder to read.
+
+## Light split-flap motif
+
+The split-flap motif is the most literal artifact borrowed from the TV Style reference, but it should be translated into light mode. Think "quiet airport board in daylight," not a dark terminal display.
+
+Use the motif for:
+
+- Short metadata: `OPENAI`, `AGENTS`, `STANFORD`, `SWE-BENCH`.
+- Section markers or compact labels.
+- A small hero-side detail, such as initials or current focus.
+- Project tags and affiliation categories.
+- Optional loading or hover states if the site later gains interaction.
+
+Do not use the motif for:
+
+- Full paragraphs.
+- Navigation tabs.
+- Large decorative walls of letters.
+- Anything that competes with the hero name or portrait.
+
+Anatomy:
+
+| Part | Guidance |
+| --- | --- |
+| Tile | White or warm-white surface with a `1px` hairline border |
+| Radius | `4-6px`, tighter than the portrait frame and content groups |
+| Seam | A horizontal midpoint line at `rgba(17, 24, 39, 0.08)` |
+| Text | Uppercase, `11-13px`, `700`, `0.06-0.1em` tracking |
+| Gap | `2-4px` between tiles |
+| Accent | One tile or one edge may use an approved accent, usually yellow or blue |
+| Shadow | Optional, extremely subtle, mostly inset |
+
+Recommended treatments:
+
+- `Default`: white tile, muted border, dark text.
+- `Quiet`: warm-white tile, muted text, no accent.
+- `Active`: yellow top border or yellow tile background with dark text.
+- `Technical`: blue border or blue dot for research/project labels.
+- `Warm`: rose or orange micro-accent for personal details.
+
+Suggested CSS sketch:
+
+```css
+.split-flap {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  align-items: center;
+}
+
+.split-flap__tile {
+  position: relative;
+  min-width: 1.55rem;
+  height: 1.55rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-line);
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.82);
+  color: var(--color-text);
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.split-flap__tile::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  top: 50%;
+  height: 1px;
+  background: rgba(17, 24, 39, 0.08);
+}
+
+.split-flap__tile[data-accent="yellow"] {
+  border-color: color-mix(in srgb, var(--accent-yellow) 62%, var(--color-line));
+  background: color-mix(in srgb, var(--accent-yellow) 26%, white);
+}
+
+.split-flap__tile[data-accent="blue"] {
+  border-color: color-mix(in srgb, var(--accent-blue) 58%, var(--color-line));
+}
+```
+
+Placement examples:
+
+- Above a section title: a three-to-six tile label such as `WORK` or `LABS`.
+- Next to a project: a compact category label like `BENCH` or `OSS`.
+- Near the hero intro: initials `E P` or a quiet `AGI` marker.
+- In a footer detail: a small `2025` tile group before the copyright line.
 
 ## Components
 
@@ -229,6 +325,7 @@ Avoid:
 - Keep white as the dominant visual field.
 - Use the approved accent palette only.
 - Replace dark TV-style contrast with light surfaces, black text, and soft accent signals.
+- Include the light split-flap motif as a recurring but sparse pattern.
 - Preserve the organic gradient as atmosphere.
 - Introduce compact uppercase metadata labels.
 - Use thin dividers and small-radius repeated rows for structure.
