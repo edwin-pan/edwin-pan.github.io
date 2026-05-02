@@ -332,6 +332,104 @@
         font-size: 0.62rem;
       }
 
+      .split-board-wrap {
+        grid-column: 1 / -1;
+        margin-top: clamp(0.15rem, 1.4vw, 0.85rem);
+      }
+
+      .split-board {
+        --board-columns: 25;
+        --board-padding: clamp(0.85rem, 2.4vw, 1.95rem);
+        --board-gap: clamp(0.14rem, 0.45vw, 0.38rem);
+        display: grid;
+        grid-template-columns: repeat(var(--board-columns), minmax(0, 1fr));
+        gap: var(--board-gap);
+        padding: var(--board-padding);
+        border-radius: 18px;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0)),
+          #171918;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.05),
+          0 18px 42px rgba(17, 24, 39, 0.18);
+        overflow: hidden;
+        perspective: 900px;
+      }
+
+      .split-board__tile {
+        position: relative;
+        aspect-ratio: 1 / 0.86;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        border-radius: 4px;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0) 45%),
+          #242624;
+        border: 1px solid rgba(255, 255, 255, 0.025);
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.035),
+          inset 0 -1px 0 rgba(0, 0, 0, 0.28);
+        color: rgba(255, 255, 255, 0.92);
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: clamp(0.46rem, 1.35vw, 1.04rem);
+        font-weight: 800;
+        line-height: 1;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        transform-style: preserve-3d;
+      }
+
+      .split-board__tile::before {
+        content: attr(data-next);
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: inherit;
+        color: inherit;
+        opacity: 0;
+        transform: rotateX(88deg);
+        transform-origin: center;
+        backface-visibility: hidden;
+      }
+
+      .split-board__tile::after {
+        content: "";
+        position: absolute;
+        inset-inline: 0;
+        top: 50%;
+        z-index: 3;
+        height: 1px;
+        background: rgba(0, 0, 0, 0.48);
+        box-shadow: 0 1px 0 rgba(255, 255, 255, 0.035);
+      }
+
+      .split-board__tile > span {
+        position: relative;
+        z-index: 1;
+        backface-visibility: hidden;
+      }
+
+      .split-board__tile.is-flipping {
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0) 45%),
+          #2b2e2b;
+      }
+
+      .split-board__tile.is-flipping > span {
+        animation: flapCurrent 430ms cubic-bezier(0.2, 0.8, 0.2, 1);
+        transform-origin: center;
+      }
+
+      .split-board__tile.is-flipping::before {
+        animation: flapNext 430ms cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+
       section {
         display: grid;
         grid-template-columns: minmax(140px, 170px) minmax(0, 1fr);
@@ -553,16 +651,10 @@
           <div
             class="split-flap hero-marker"
             role="img"
-            aria-label="OpenAI"
-            data-flip-phrases="OPENAI|AGENTS|SAFETY|FUTURE"
-            data-flip-interval="3400"
-            data-flip-accent="yellow"
+            aria-label="AGI"
           >
-            <span class="split-flap__tile accent-yellow" aria-hidden="true"><span>O</span></span>
-            <span class="split-flap__tile" aria-hidden="true"><span>P</span></span>
-            <span class="split-flap__tile" aria-hidden="true"><span>E</span></span>
-            <span class="split-flap__tile" aria-hidden="true"><span>N</span></span>
             <span class="split-flap__tile" aria-hidden="true"><span>A</span></span>
+            <span class="split-flap__tile accent-yellow" aria-hidden="true"><span>G</span></span>
             <span class="split-flap__tile" aria-hidden="true"><span>I</span></span>
           </div>
           <h1 class="display">Edwin Pan</h1>
@@ -594,10 +686,6 @@
             class="split-flap hero-signal"
             role="img"
             aria-label="Agents"
-            data-flip-phrases="AGENTS|IDEAS|DECADE|SAFETY"
-            data-flip-interval="3900"
-            data-flip-delay="900"
-            data-flip-accent="blue"
           >
             <span class="split-flap__tile accent-blue" aria-hidden="true"><span>A</span></span>
             <span class="split-flap__tile" aria-hidden="true"><span>G</span></span>
@@ -606,6 +694,18 @@
             <span class="split-flap__tile" aria-hidden="true"><span>T</span></span>
             <span class="split-flap__tile" aria-hidden="true"><span>S</span></span>
           </div>
+        </div>
+
+        <div class="split-board-wrap">
+          <div
+            class="split-board"
+            role="img"
+            aria-label="Less is more, Mies van der Rohe"
+            data-board-frames="LESS IS MORE|- MIES VAN DER ROHE||AGI BENEFITS ALL|- HUMANITY||HIGH RISK IDEAS|- NEXT DECADE"
+            data-board-columns="25"
+            data-board-rows="5"
+            data-board-interval="4200"
+          ></div>
         </div>
       </header>
 
@@ -724,10 +824,6 @@
                 class="entry-tag split-flap entry-flap"
                 role="img"
                 aria-label="Evaluation"
-                data-flip-phrases="EVAL|AGNT|SWE"
-                data-flip-interval="5200"
-                data-flip-delay="1300"
-                data-flip-accent="yellow"
               >
                 <span class="split-flap__tile accent-yellow" aria-hidden="true"><span>E</span></span>
                 <span class="split-flap__tile" aria-hidden="true"><span>V</span></span>
@@ -747,10 +843,6 @@
                 class="entry-tag split-flap entry-flap"
                 role="img"
                 aria-label="Open source"
-                data-flip-phrases="OSS|RADAR|ML"
-                data-flip-interval="5600"
-                data-flip-delay="1800"
-                data-flip-accent="blue"
               >
                 <span class="split-flap__tile accent-blue" aria-hidden="true"><span>O</span></span>
                 <span class="split-flap__tile" aria-hidden="true"><span>S</span></span>
@@ -775,9 +867,10 @@
 
     <script>
       (() => {
-        const boards = Array.from(document.querySelectorAll(".split-flap[data-flip-phrases]"));
+        const phraseBoards = Array.from(document.querySelectorAll(".split-flap[data-flip-phrases]"));
+        const gridBoards = Array.from(document.querySelectorAll(".split-board[data-board-frames]"));
 
-        if (!boards.length) {
+        if (!phraseBoards.length && !gridBoards.length) {
           return;
         }
 
@@ -806,7 +899,7 @@
 
         const normalizePhrase = (phrase, length) => cleanPhrase(phrase).padEnd(length, " ").slice(0, length);
 
-        boards.forEach((board, boardIndex) => {
+        phraseBoards.forEach((board, boardIndex) => {
           const phrases = board.dataset.flipPhrases
             .split("|")
             .map(cleanPhrase)
@@ -900,6 +993,136 @@
             advance();
             window.setInterval(advance, interval);
           }, interval + delay);
+        });
+
+        const makeBoardTile = () => {
+          const tile = document.createElement("span");
+          const face = document.createElement("span");
+
+          tile.className = "split-board__tile";
+          tile.setAttribute("aria-hidden", "true");
+          tile.dataset.char = " ";
+          face.textContent = blank;
+          tile.append(face);
+
+          return tile;
+        };
+
+        const frameToCells = (frame, columns, rows) => {
+          const cells = Array(columns * rows).fill(" ");
+          const lines = frame
+            .split("|")
+            .map(cleanPhrase)
+            .filter(Boolean)
+            .slice(0, rows);
+          const startRow =
+            lines.length === 1 ? Math.floor(rows / 2) : lines.length === 2 ? 1 : Math.max(0, Math.floor((rows - lines.length) / 2));
+
+          lines.forEach((line, lineIndex) => {
+            const row = Math.min(rows - 1, startRow + lineIndex * (lines.length === 2 ? 2 : 1));
+            const trimmedLine = line.slice(0, columns);
+            const startColumn = Math.max(0, Math.floor((columns - trimmedLine.length) / 2));
+
+            Array.from(trimmedLine).forEach((char, charIndex) => {
+              cells[row * columns + startColumn + charIndex] = char;
+            });
+          });
+
+          return cells;
+        };
+
+        gridBoards.forEach((board) => {
+          const frames = board.dataset.boardFrames
+            .split("||")
+            .map((frame) => frame.trim())
+            .filter(Boolean);
+
+          if (!frames.length) {
+            return;
+          }
+
+          const columns = Number(board.dataset.boardColumns || 25);
+          const rows = Number(board.dataset.boardRows || 5);
+          const interval = Number(board.dataset.boardInterval || 4400);
+          const tiles = Array.from({ length: columns * rows }, makeBoardTile);
+          const normalizedFrames = frames.map((frame) => frameToCells(frame, columns, rows));
+          let currentIndex = 0;
+          let activeTimers = [];
+
+          board.style.setProperty("--board-columns", columns);
+          board.replaceChildren(...tiles);
+
+          const clearTimers = () => {
+            activeTimers.forEach((timer) => window.clearTimeout(timer));
+            activeTimers = [];
+          };
+
+          const finishTile = (tile) => {
+            tile.classList.remove("is-flipping");
+            tile.removeAttribute("data-next");
+          };
+
+          const setBoardFrame = (cells, animate) => {
+            clearTimers();
+            board.setAttribute("aria-label", cells.join("").replace(/\s+/g, " ").trim());
+
+            tiles.forEach((tile) => {
+              finishTile(tile);
+            });
+
+            cells.forEach((char, index) => {
+              const tile = tiles[index];
+
+              if (!tile || tile.dataset.char === char) {
+                return;
+              }
+
+              const face = tile.querySelector("span");
+
+              if (!face) {
+                return;
+              }
+
+              const updateFace = () => {
+                face.textContent = displayChar(char);
+                tile.dataset.char = char;
+              };
+
+              if (!animate || reduceMotion) {
+                updateFace();
+                finishTile(tile);
+                return;
+              }
+
+              const row = Math.floor(index / columns);
+              const column = index % columns;
+              const stagger = row * 46 + column * 12;
+
+              activeTimers.push(
+                window.setTimeout(() => {
+                  tile.dataset.next = displayChar(char);
+                  tile.classList.add("is-flipping");
+                  activeTimers.push(window.setTimeout(updateFace, 190));
+                  activeTimers.push(window.setTimeout(() => finishTile(tile), 430));
+                }, stagger)
+              );
+            });
+          };
+
+          setBoardFrame(normalizedFrames[0], false);
+
+          if (normalizedFrames.length < 2) {
+            return;
+          }
+
+          window.setTimeout(() => {
+            currentIndex = (currentIndex + 1) % normalizedFrames.length;
+            setBoardFrame(normalizedFrames[currentIndex], true);
+            window.setInterval(() => {
+              currentIndex = (currentIndex + 1) % normalizedFrames.length;
+              setBoardFrame(normalizedFrames[currentIndex], true);
+            }, interval);
+          }, interval);
         });
       })();
     </script>

@@ -208,7 +208,8 @@ Functional behavior:
 - Keep phrases the same visual width when possible; pad shorter words with blank tiles.
 - Flip letters individually with a subtle stagger of roughly `50-80ms` per tile.
 - Keep each tile flip around `360-480ms`.
-- Use one primary auto-rotating board in the hero and only a few quieter secondary boards.
+- Use one primary auto-rotating full board in the hero and only a few quieter static secondary markers.
+- The full-board treatment may use a dark housing inside the white page: many blank cells, sparse centered lines, thick gutters, and white uppercase letters.
 - Update the board's accessible label as the visible phrase changes.
 - Respect `prefers-reduced-motion`; reduced-motion users can receive instant phrase changes without a flip animation.
 - Do not flip so often that the board distracts from reading the page. A `3.4-5.6s` interval is the right range.
