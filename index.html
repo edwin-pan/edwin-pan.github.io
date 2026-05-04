@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Edwin Pan</title>
+    <title>Edwin Pan | Research Program Manager</title>
     <link rel="icon" href="assets/favicon.png" type="image/png" />
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
@@ -116,9 +116,6 @@
       }
 
       .about-section {
-        margin-top: 0;
-        padding-top: 0;
-        border-top: none;
         display: grid;
         grid-template-columns: minmax(0, 1fr) minmax(160px, 220px);
         gap: clamp(1.5rem, 4vw, 3rem);
@@ -332,6 +329,33 @@
         content: none;
       }
 
+      .news-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.85rem;
+        max-width: 760px;
+      }
+
+      .news-item {
+        display: grid;
+        grid-template-columns: minmax(4.75rem, auto) minmax(0, 1fr);
+        gap: 1rem;
+        align-items: baseline;
+        padding-left: 1rem;
+        border-left: 3px solid var(--highlight-blue);
+      }
+
+      .news-date {
+        color: rgba(15, 23, 42, 0.52);
+        font-weight: 700;
+      }
+
+      .news-copy {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+
       .subsection {
         margin-top: 1rem;
       }
@@ -366,6 +390,11 @@
           justify-self: flex-start;
           transform: rotate(-3deg);
         }
+
+        .news-item {
+          grid-template-columns: 1fr;
+          gap: 0.25rem;
+        }
       }
     </style>
   </head>
@@ -374,6 +403,7 @@
       <header class="hero-banner">
         <div class="hero-grid">
           <div class="hero-copy">
+            <p class="hero-pill">Research Program Manager, OpenAI</p>
             <h1 class="display">Edwin Pan</h1>
             <p class="statement-body">
               Hi! I'm Edwin, I'm excited about Artificial General Intelligence, distributing its benefits to humanity, and
@@ -399,11 +429,38 @@
         </div>
       </header>
 
+      <section>
+        <h2 class="standard-header">Selected work</h2>
+        <div class="links-row">
+          <a href="https://scale.com/research/swe_bench_pro" target="_blank" rel="noreferrer noopener">SWE-Bench Pro</a>
+          <a href="https://github.com/PreSenseRadar/OpenRadar" target="_blank" rel="noreferrer noopener">OpenRadar</a>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="standard-header">News</h2>
+        <div class="news-list">
+          <article class="news-item">
+            <p class="small-callout news-date">2026</p>
+            <div class="news-copy">
+              <p class="list-title">
+                <a href="https://scale.com/research/swe_bench_pro" target="_blank" rel="noreferrer noopener"
+                  >SWE-Bench Pro and ICML 2026</a
+                >
+              </p>
+              <p class="medium-body">
+                Sharing work on a contamination-resistant, long-horizon coding-agent benchmark for the ICML 2026 cycle.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
       <section class="about-section">
         <div class="about-copy">
           <p class="section-label">About me</p>
           <p class="statement-body">
-            I'm currently a Member of Technical Program Staff at OpenAI, on the Foundations Research Team. My primary focus is on
+            I'm currently a Research Program Manager at OpenAI, on the Foundations Research Team. My primary focus is on
             agentic capabilities, specifically on the high-risk/high-reward ideas that could shape the next decade of AI.
           </p>
           <p class="statement-body">Separately, I enjoy tennis, guitar, and german shepherds.</p>
@@ -437,15 +494,7 @@
         </div>
       </section>
 
-      <section>
-        <h2 class="standard-header">Some Notable Projects</h2>
-        <div class="links-row">
-          <a href="https://scale.com/research/swe_bench_pro" target="_blank" rel="noreferrer noopener">SWE Bench Pro</a>
-          <a href="https://github.com/PreSenseRadar/OpenRadar" target="_blank" rel="noreferrer noopener">OpenRadar</a>
-        </div>
-      </section>
-
-      <footer class="small-callout">© 2025 Edwin Pan. Made with &lt;3 by Codex</footer>
+      <footer class="small-callout">© 2025 Edwin Pan. Made with &lt;3 with Codex.</footer>
     </main>
   </body>
 </html>
