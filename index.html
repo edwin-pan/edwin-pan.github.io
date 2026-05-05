@@ -338,6 +338,33 @@
         color: var(--text-primary);
       }
 
+      .news-list {
+        gap: 1.05rem;
+      }
+
+      .news-item {
+        padding: 0.05rem 0;
+      }
+
+      .news-copy {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+      }
+
+      .news-date {
+        color: var(--text-muted);
+      }
+
+      .news-text {
+        max-width: 38rem;
+      }
+
+      .news-text a {
+        color: var(--text-primary);
+        border-bottom-color: rgba(17, 24, 39, 0.18);
+      }
+
       .entry-groups {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -485,14 +512,27 @@
 
       <section aria-labelledby="news-heading">
         <h2 class="standard-header" id="news-heading">News</h2>
-        <div class="section-content entry-list">
-          <article class="entry">
-            <div class="entry-topline">
-              <p class="entry-title">
-                <span class="small-callout">2026 &middot;</span>
-                <a href="https://scale.com/research/swe_bench_pro" target="_blank" rel="noreferrer noopener"
-                  >SWE Bench Pro has been accepted to ICML 2026. See you in Seoul!</a
+        <div class="section-content news-list">
+          <article class="news-item">
+            <div class="news-copy">
+              <p class="small-callout news-date">April 2026</p>
+              <p class="standard-body news-text">
+                <a href="https://scale.com/research/swe_bench_pro" target="_blank" rel="noreferrer noopener">SWE Bench Pro</a>
+                has been accepted to ICML 2026. See you in Seoul!
+              </p>
+            </div>
+          </article>
+          <article class="news-item">
+            <div class="news-copy">
+              <p class="small-callout news-date">February 2026</p>
+              <p class="standard-body news-text">
+                <a
+                  href="https://openai.com/index/why-we-no-longer-evaluate-swe-bench-verified/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  >Blog:</a
                 >
+                OpenAI recommends reporting results for SWE-bench Pro.
               </p>
             </div>
           </article>
