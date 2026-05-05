@@ -34,7 +34,7 @@
         --blob-orange: rgba(255, 140, 85, 0.18);
         --blob-purple: rgba(206, 199, 240, 0.34);
         --display-size: clamp(3rem, 7vw, 4.5rem);
-        --standard-header-size: clamp(1.45rem, 3vw, 1.8rem);
+        --standard-header-size: clamp(1.35rem, 2.6vw, 1.6rem);
         --statement-body-size: 1.25rem;
         --standard-body-size: 1rem;
         --small-callout-size: 0.92rem;
@@ -192,8 +192,8 @@
 
       .standard-header {
         font-size: var(--standard-header-size);
-        line-height: 1.15;
-        letter-spacing: -0.02em;
+        line-height: 1.12;
+        letter-spacing: -0.012em;
         font-weight: 600;
       }
 
@@ -220,7 +220,7 @@
         grid-template-columns: minmax(0, 1.65fr) minmax(180px, 240px);
         gap: clamp(1.75rem, 5vw, 4rem);
         align-items: start;
-        padding-bottom: clamp(2.5rem, 6vw, 3.5rem);
+        padding-bottom: clamp(2rem, 5vw, 2.75rem);
       }
 
       .hero-copy {
@@ -353,7 +353,9 @@
       }
 
       .news-date {
-        color: var(--text-muted);
+        font-size: 0.88rem;
+        line-height: 1.35;
+        color: rgba(17, 24, 39, 0.52);
       }
 
       .news-text {
@@ -532,7 +534,16 @@
                   rel="noreferrer noopener"
                   >Blog:</a
                 >
-                OpenAI recommends reporting results for SWE-bench Pro.
+                OpenAI recommends reporting results for SWE-Bench Pro.
+              </p>
+            </div>
+          </article>
+          <article class="news-item">
+            <div class="news-copy">
+              <p class="small-callout news-date">September 2025</p>
+              <p class="standard-body news-text">
+                <a href="https://scale.com/blog/swe-bench-pro" target="_blank" rel="noreferrer noopener">Blog:</a>
+                Releasing SWE-Bench Pro to better track coding capabilities.
               </p>
             </div>
           </article>
@@ -540,14 +551,14 @@
       </section>
 
       <section aria-labelledby="work-heading">
-        <h2 class="standard-header" id="work-heading">Selected work</h2>
+        <h2 class="standard-header" id="work-heading">Selected projects</h2>
         <div class="section-content entry-list">
           <article class="entry">
             <div class="entry-topline">
               <p class="entry-title">
                 <a href="https://scale.com/research/swe_bench_pro" target="_blank" rel="noreferrer noopener">SWE-Bench Pro</a>
               </p>
-              <span class="entry-tag">Evaluation</span>
+              <span class="entry-tag">ICML 2026</span>
             </div>
             <p class="standard-body entry-summary">Realistic evaluations of AI agents for software engineering.</p>
           </article>
