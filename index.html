@@ -253,20 +253,72 @@
         width: min(100%, 190px);
       }
 
-      .portrait-frame {
+      .portrait-deck {
         position: relative;
+        display: block;
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        cursor: pointer;
+        perspective: 700px;
+      }
+
+      .portrait-deck:focus-visible {
+        outline: none;
+      }
+
+      .portrait-card {
+        position: absolute;
+        inset: 0;
         border-radius: 18px;
-        overflow: hidden;
         padding: 0.45rem;
         background: linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.38));
         border: 1px solid rgba(255, 255, 255, 0.48);
         box-shadow: 0 18px 40px rgba(17, 24, 39, 0.08);
         backdrop-filter: blur(10px);
+        opacity: 0;
+        pointer-events: none;
+        transform: translate3d(0, 0, -16px) rotate(0deg) scale(0.98);
+        transform-origin: 88% 12%;
+        transition: opacity 0.25s ease, transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+          box-shadow 0.35s ease;
+        will-change: transform;
       }
 
-      .portrait-frame img {
+      .portrait-card.is-active {
+        z-index: 3;
+        opacity: 1;
+        transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+      }
+
+      .portrait-card.is-next {
+        z-index: 2;
+        opacity: 0.86;
+        transform: translate3d(0.35rem, -0.35rem, 0) rotate(2.5deg) scale(0.98);
+      }
+
+      .portrait-deck:hover .portrait-card.is-active,
+      .portrait-deck:focus-visible .portrait-card.is-active {
+        transform: translate3d(-0.12rem, 0.12rem, 0) rotate(-1.6deg) scale(1);
+      }
+
+      .portrait-deck:hover .portrait-card.is-next,
+      .portrait-deck:focus-visible .portrait-card.is-next {
+        opacity: 1;
+        transform: translate3d(1.3rem, -1.1rem, 0) rotate(9deg) scale(0.99);
+        box-shadow: 0 20px 44px rgba(17, 24, 39, 0.11);
+      }
+
+      .portrait-deck:focus-visible .portrait-card.is-active {
+        box-shadow: 0 18px 40px rgba(17, 24, 39, 0.08), 0 0 0 4px var(--soft-focus);
+      }
+
+      .portrait-card img {
         aspect-ratio: 1 / 1;
         width: 100%;
+        height: 100%;
         object-fit: cover;
         border-radius: 14px;
       }
@@ -506,9 +558,14 @@
         </div>
 
         <div class="portrait-wrap">
-          <div class="portrait-frame">
-            <img src="assets/profile_photo.jpeg" alt="Portrait of Edwin Pan" />
-          </div>
+          <button class="portrait-deck" type="button" aria-label="Switch profile photo" data-photo-deck>
+            <span class="portrait-card is-active" data-photo-card data-alt="Portrait of Edwin Pan">
+              <img src="assets/profile_photo.jpeg" alt="Portrait of Edwin Pan" />
+            </span>
+            <span class="portrait-card is-next" data-photo-card data-alt="Edwin Pan smiling outdoors">
+              <img src="assets/profile_photo_alt.jpeg" alt="" />
+            </span>
+          </button>
         </div>
       </header>
 
@@ -649,5 +706,42 @@
 
       <footer class="small-callout">© 2026 Edwin Pan. Made with &lt;3 with Codex.</footer>
     </main>
+    <script>
+      (() => {
+        const photoDeck = document.querySelector("[data-photo-deck]");
+
+        if (!photoDeck) {
+          return;
+        }
+
+        const cards = Array.from(photoDeck.querySelectorAll("[data-photo-card]"));
+        let activeIndex = 0;
+
+        const updatePhotoDeck = () => {
+          cards.forEach((card, index) => {
+            const isActive = index === activeIndex;
+            const isNext = index === (activeIndex + 1) % cards.length;
+            const image = card.querySelector("img");
+
+            card.classList.toggle("is-active", isActive);
+            card.classList.toggle("is-next", isNext);
+            card.setAttribute("aria-hidden", String(!isActive));
+
+            if (image) {
+              image.alt = isActive ? card.dataset.alt || "" : "";
+            }
+          });
+
+          photoDeck.setAttribute("aria-label", `Switch profile photo (${activeIndex + 1} of ${cards.length})`);
+        };
+
+        photoDeck.addEventListener("click", () => {
+          activeIndex = (activeIndex + 1) % cards.length;
+          updatePhotoDeck();
+        });
+
+        updatePhotoDeck();
+      })();
+    </script>
   </body>
 </html>
