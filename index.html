@@ -6,7 +6,7 @@
     <title>Edwin Pan | Research Program Manager</title>
     <meta
       name="description"
-      content="Edwin Pan is a Research Program Manager at OpenAI focused on agentic capabilities and high-risk, high-reward ideas in AI."
+      content="Edwin Pan is a Research Program Manager at OpenAI focused on agentic safety, catastrophic risk mitigation, and doing no harm."
     />
     <link rel="icon" href="assets/favicon.png" type="image/png" />
     <style>
@@ -152,6 +152,7 @@
 
       h1,
       h2,
+      h3,
       p,
       ul {
         margin: 0;
@@ -217,13 +218,20 @@
 
       .hero {
         display: grid;
+        grid-template-areas: "name portrait" "copy portrait";
         grid-template-columns: minmax(0, 1.65fr) minmax(180px, 240px);
-        gap: clamp(1.75rem, 5vw, 4rem);
+        gap: 1rem clamp(1.75rem, 5vw, 4rem);
         align-items: start;
         padding-bottom: clamp(2rem, 5vw, 2.75rem);
       }
 
+      .hero > h1 {
+        grid-area: name;
+        align-self: center;
+      }
+
       .hero-copy {
+        grid-area: copy;
         display: flex;
         flex-direction: column;
         gap: 1rem;
@@ -249,6 +257,7 @@
       }
 
       .portrait-wrap {
+        grid-area: portrait;
         justify-self: end;
         width: min(100%, 190px);
       }
@@ -325,7 +334,7 @@
 
       section {
         display: grid;
-        grid-template-columns: minmax(140px, 170px) minmax(0, 1fr);
+        grid-template-columns: minmax(170px, 190px) minmax(0, 1fr);
         gap: 1.5rem 2rem;
         padding-top: 1.75rem;
         border-top: 1px solid var(--soft-line);
@@ -419,6 +428,29 @@
         border-bottom-color: rgba(17, 24, 39, 0.18);
       }
 
+      .earlier-updates summary {
+        width: fit-content;
+        padding: 0.5rem 0;
+        color: var(--text-secondary);
+        font-size: var(--standard-body-size);
+        line-height: 1.5;
+        cursor: pointer;
+      }
+
+      .earlier-updates summary::marker {
+        color: var(--text-muted);
+      }
+
+      .earlier-updates summary:focus-visible {
+        outline: 2px solid #A3BEFA;
+        outline-offset: 4px;
+        border-radius: 0.2rem;
+      }
+
+      .earlier-updates .news-list {
+        padding-top: 0.75rem;
+      }
+
       .entry-groups {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -429,6 +461,16 @@
         display: flex;
         flex-direction: column;
         gap: 0.85rem;
+      }
+
+      .education-group {
+        grid-column: 1 / -1;
+      }
+
+      .education-entries {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem 2rem;
       }
 
       .section-label {
@@ -465,12 +507,19 @@
         }
 
         .hero {
-          grid-template-columns: 1fr;
+          grid-template-areas: "name portrait" "copy copy";
+          grid-template-columns: minmax(0, 1fr) 100px;
+          gap: 1.25rem 1rem;
         }
 
         .portrait-wrap {
-          justify-self: start;
-          width: min(190px, 42vw);
+          align-self: center;
+          width: 100%;
+        }
+
+        .portrait-deck:hover .portrait-card.is-next,
+        .portrait-deck:focus-visible .portrait-card.is-next {
+          transform: translate3d(0.4rem, -0.4rem, 0) rotate(7deg) scale(0.99);
         }
 
         section {
@@ -478,14 +527,11 @@
           gap: 0.75rem;
         }
 
-        .entry-groups {
-          grid-template-columns: 1fr;
-        }
       }
 
       @media (max-width: 640px) {
         :root {
-          --page-width: min(960px, calc(100% - 1.5rem));
+          --page-width: min(960px, calc(100% - 2.5rem));
         }
 
         .gradient-field {
@@ -504,8 +550,23 @@
           font-size: 1.15rem;
         }
 
-        .portrait-wrap {
-          width: min(165px, 44vw);
+        .hero {
+          grid-template-columns: minmax(0, 1fr) 80px;
+          column-gap: 0.75rem;
+        }
+
+        .portrait-card {
+          padding: 0.25rem;
+          border-radius: 12px;
+        }
+
+        .portrait-card img {
+          border-radius: 9px;
+        }
+
+        .entry-groups,
+        .education-entries {
+          grid-template-columns: 1fr;
         }
       }
 
@@ -536,14 +597,14 @@
 
     <main>
       <header class="hero">
+        <h1 class="display">Edwin Pan</h1>
         <div class="hero-copy">
-          <h1 class="display">Edwin Pan</h1>
           <p class="standard-body intro-detail">
             I'm currently a Research Program Manager at
             <a href="https://openai.com" target="_blank" rel="noreferrer noopener">OpenAI</a>. My primary focus is on
             agentic safety, catastrophic risk mitigation, and doing no harm.
           </p>
-          <p class="standard-body intro-detail">Outside of work, I enjoy tennis, guitar, and german shepherds.</p>
+          <p class="standard-body intro-detail">Outside of work, I enjoy tennis, guitar, and German shepherds.</p>
 
           <div class="link-cluster" aria-label="External links">
             <a href="https://github.com/edwin-pan" target="_blank" rel="noreferrer noopener">GitHub</a>
@@ -560,7 +621,7 @@
         <div class="portrait-wrap">
           <button class="portrait-deck" type="button" aria-label="Switch profile photo" data-photo-deck>
             <span class="portrait-card is-active" data-photo-card data-alt="Portrait of Edwin Pan">
-              <img src="assets/profile_photo.jpeg" alt="Portrait of Edwin Pan" />
+              <img src="assets/profile_photo.jpeg" alt="Portrait of Edwin Pan" width="640" height="640" />
             </span>
             <span class="portrait-card is-next" data-photo-card data-alt="Edwin Pan smiling outdoors">
               <img src="assets/profile_photo_alt.jpeg" alt="" />
@@ -569,74 +630,8 @@
         </div>
       </header>
 
-      <section aria-labelledby="news-heading">
-        <h2 class="standard-header" id="news-heading">News</h2>
-        <div class="section-content news-list">
-          <article class="news-item">
-            <div class="news-copy">
-              <p class="small-callout news-date">July 2026</p>
-              <p class="standard-body news-text">
-                <a
-                  href="https://openai.com/index/separating-signal-from-noise-coding-evaluations/"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  >Blog:</a
-                >
-                Separating signal from noise in coding evaluations.
-              </p>
-            </div>
-          </article>
-          <article class="news-item">
-            <div class="news-copy">
-              <p class="small-callout news-date">June 2026</p>
-              <p class="standard-body news-text">
-                <a
-                  href="https://openai.com/index/previewing-gpt-5-6-sol/"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  >Launch:</a
-                >
-                Previewing GPT-5.6 Sol, a next-generation model.
-              </p>
-            </div>
-          </article>
-          <article class="news-item">
-            <div class="news-copy">
-              <p class="small-callout news-date">April 2026</p>
-              <p class="standard-body news-text">
-                <a href="https://scale.com/research/swe_bench_pro" target="_blank" rel="noreferrer noopener">SWE Bench Pro</a>
-                has been accepted to ICML 2026. See you in Seoul!
-              </p>
-            </div>
-          </article>
-          <article class="news-item">
-            <div class="news-copy">
-              <p class="small-callout news-date">February 2026</p>
-              <p class="standard-body news-text">
-                <a
-                  href="https://openai.com/index/why-we-no-longer-evaluate-swe-bench-verified/"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  >Blog:</a
-                >
-                OpenAI recommends reporting results for SWE-Bench Pro.
-              </p>
-            </div>
-          </article>
-          <article class="news-item">
-            <div class="news-copy">
-              <p class="small-callout news-date">September 2025</p>
-              <p class="standard-body news-text">
-                <a href="https://scale.com/blog/swe-bench-pro" target="_blank" rel="noreferrer noopener">Blog:</a>
-                Releasing SWE-Bench Pro to better track coding capabilities.
-              </p>
-            </div>
-          </article>
-        </div>
-      </section>
-
       <section aria-labelledby="work-heading">
-        <h2 class="standard-header" id="work-heading">Selected projects</h2>
+        <h2 class="standard-header" id="work-heading">Selected work</h2>
         <div class="section-content entry-list">
           <article class="entry">
             <div class="entry-topline">
@@ -660,74 +655,118 @@
         </div>
       </section>
 
-      <section aria-labelledby="education-heading">
-        <h2 class="standard-header" id="education-heading">Education</h2>
-        <div class="section-content entry-list">
-          <article class="entry">
-            <div class="entry-topline">
-              <p class="entry-title">Stanford University</p>
+      <section aria-labelledby="news-heading">
+        <h2 class="standard-header" id="news-heading">Recent updates</h2>
+        <div class="section-content news-list">
+          <article class="news-item">
+            <div class="news-copy">
+              <time class="small-callout news-date" datetime="2026-07">July 2026</time>
+              <p class="standard-body news-text">
+                <a
+                  href="https://openai.com/index/separating-signal-from-noise-coding-evaluations/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  >Separating signal from noise in coding evaluations</a>.
+              </p>
             </div>
-            <p class="standard-body entry-summary">MS in Electrical Engineering</p>
           </article>
-
-          <article class="entry">
-            <div class="entry-topline">
-              <p class="entry-title">University of Illinois at Urbana-Champaign</p>
+          <article class="news-item">
+            <div class="news-copy">
+              <time class="small-callout news-date" datetime="2026-06">June 2026</time>
+              <p class="standard-body news-text">
+                <a
+                  href="https://openai.com/index/previewing-gpt-5-6-sol/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  >Previewing GPT-5.6 Sol, a next-generation model</a>.
+              </p>
             </div>
-            <p class="standard-body entry-summary">BS in Electrical Engineering</p>
           </article>
+          <article class="news-item">
+            <div class="news-copy">
+              <time class="small-callout news-date" datetime="2026-04">April 2026</time>
+              <p class="standard-body news-text">
+                <a href="https://scale.com/research/swe_bench_pro" target="_blank" rel="noreferrer noopener">SWE-Bench Pro</a>
+                has been accepted to ICML 2026. See you in Seoul!
+              </p>
+            </div>
+          </article>
+          <details class="earlier-updates">
+            <summary>Earlier updates</summary>
+            <div class="section-content news-list">
+              <article class="news-item">
+                <div class="news-copy">
+                  <time class="small-callout news-date" datetime="2026-02">February 2026</time>
+                  <p class="standard-body news-text">
+                    <a
+                      href="https://openai.com/index/why-we-no-longer-evaluate-swe-bench-verified/"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      >OpenAI recommends reporting results for SWE-Bench Pro</a>.
+                  </p>
+                </div>
+              </article>
+              <article class="news-item">
+                <div class="news-copy">
+                  <time class="small-callout news-date" datetime="2025-09">September 2025</time>
+                  <p class="standard-body news-text">
+                    <a href="https://scale.com/blog/swe-bench-pro" target="_blank" rel="noreferrer noopener"
+                      >Releasing SWE-Bench Pro to better track coding capabilities</a>.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </details>
         </div>
       </section>
 
-      <section aria-labelledby="affiliations-heading">
-        <h2 class="standard-header" id="affiliations-heading">Past affiliations</h2>
-        <div class="section-content">
-          <div class="entry-groups">
-            <div class="entry-group">
-              <p class="section-label">Professional</p>
+      <section aria-labelledby="background-heading">
+        <h2 class="standard-header" id="background-heading">Background</h2>
+        <div class="entry-groups">
+          <div class="entry-group education-group">
+            <h3 class="section-label">Education</h3>
+            <div class="education-entries">
               <article class="entry">
-                <div class="entry-topline">
-                  <p class="entry-title">
-                    <a href="https://scale.com" target="_blank" rel="noreferrer noopener">Scale AI</a>
-                  </p>
-                </div>
-                <p class="standard-body entry-summary">Frontier AI evaluations and products</p>
+                <p class="entry-title">Stanford University</p>
+                <p class="standard-body entry-summary">MS in Electrical Engineering</p>
               </article>
-
               <article class="entry">
-                <div class="entry-topline">
-                  <p class="entry-title">
-                    <a href="https://pear.vc" target="_blank" rel="noreferrer noopener">Pear VC</a>
-                  </p>
-                </div>
-                <p class="standard-body entry-summary">Founding an early-stage company</p>
+                <p class="entry-title">University of Illinois at Urbana-Champaign</p>
+                <p class="standard-body entry-summary">BS in Electrical Engineering</p>
               </article>
             </div>
-
-            <div class="entry-group">
-              <p class="section-label">Academic</p>
-              <article class="entry">
-                <div class="entry-topline">
-                  <p class="entry-title">
-                    <a href="https://iprl.stanford.edu/index.html#home" target="_blank" rel="noreferrer noopener"
-                      >Stanford IPRL Lab</a
-                    >
-                  </p>
-                </div>
-                <p class="standard-body entry-summary">Computer vision &amp; robotics research</p>
-              </article>
-
-              <article class="entry">
-                <div class="entry-topline">
-                  <p class="entry-title">
-                    <a href="https://med.stanford.edu/pacresearch/people.html" target="_blank" rel="noreferrer noopener"
-                      >Stanford PAC Lab</a
-                    >
-                  </p>
-                </div>
-                <p class="standard-body entry-summary">Computer vision in healthcare research</p>
-              </article>
-            </div>
+          </div>
+          <div class="entry-group">
+            <h3 class="section-label">Past professional affiliations</h3>
+            <article class="entry">
+              <p class="entry-title">
+                <a href="https://scale.com" target="_blank" rel="noreferrer noopener">Scale AI</a>
+              </p>
+              <p class="standard-body entry-summary">Frontier AI evaluations and products</p>
+            </article>
+            <article class="entry">
+              <p class="entry-title">
+                <a href="https://pear.vc" target="_blank" rel="noreferrer noopener">Pear VC</a>
+              </p>
+              <p class="standard-body entry-summary">Founding an early-stage company</p>
+            </article>
+          </div>
+          <div class="entry-group">
+            <h3 class="section-label">Past academic affiliations</h3>
+            <article class="entry">
+              <p class="entry-title">
+                <a href="https://iprl.stanford.edu/index.html#home" target="_blank" rel="noreferrer noopener"
+                  >Stanford IPRL Lab</a>
+              </p>
+              <p class="standard-body entry-summary">Computer vision &amp; robotics research</p>
+            </article>
+            <article class="entry">
+              <p class="entry-title">
+                <a href="https://med.stanford.edu/pacresearch/people.html" target="_blank" rel="noreferrer noopener"
+                  >Stanford PAC Lab</a>
+              </p>
+              <p class="standard-body entry-summary">Computer vision in healthcare research</p>
+            </article>
           </div>
         </div>
       </section>
