@@ -308,6 +308,12 @@
         transform: translate3d(0.35rem, -0.35rem, 0) rotate(2.5deg) scale(0.98);
       }
 
+      .portrait-card.is-back {
+        z-index: 1;
+        opacity: 0.72;
+        transform: translate3d(0.65rem, -0.65rem, 0) rotate(5deg) scale(0.96);
+      }
+
       .portrait-deck:hover .portrait-card.is-active,
       .portrait-deck:focus-visible .portrait-card.is-active {
         transform: translate3d(-0.12rem, 0.12rem, 0) rotate(-1.6deg) scale(1);
@@ -317,6 +323,13 @@
       .portrait-deck:focus-visible .portrait-card.is-next {
         opacity: 1;
         transform: translate3d(1.3rem, -1.1rem, 0) rotate(9deg) scale(0.99);
+        box-shadow: 0 20px 44px rgba(17, 24, 39, 0.11);
+      }
+
+      .portrait-deck:hover .portrait-card.is-back,
+      .portrait-deck:focus-visible .portrait-card.is-back {
+        opacity: 1;
+        transform: translate3d(2.6rem, -1.2rem, 0) rotate(16deg) scale(0.98);
         box-shadow: 0 20px 44px rgba(17, 24, 39, 0.11);
       }
 
@@ -501,6 +514,18 @@
         }
       }
 
+      @media (max-width: 1060px) {
+        .portrait-deck:hover .portrait-card.is-next,
+        .portrait-deck:focus-visible .portrait-card.is-next {
+          transform: translate3d(0.4rem, -0.4rem, 0) rotate(7deg) scale(0.99);
+        }
+
+        .portrait-deck:hover .portrait-card.is-back,
+        .portrait-deck:focus-visible .portrait-card.is-back {
+          transform: translate3d(0.8rem, -0.8rem, 0) rotate(14deg) scale(0.98);
+        }
+      }
+
       @media (max-width: 860px) {
         :root {
           --page-width: min(960px, calc(100% - 2rem));
@@ -515,11 +540,6 @@
         .portrait-wrap {
           align-self: center;
           width: 100%;
-        }
-
-        .portrait-deck:hover .portrait-card.is-next,
-        .portrait-deck:focus-visible .portrait-card.is-next {
-          transform: translate3d(0.4rem, -0.4rem, 0) rotate(7deg) scale(0.99);
         }
 
         section {
@@ -625,6 +645,9 @@
             </span>
             <span class="portrait-card is-next" data-photo-card data-alt="Edwin Pan smiling outdoors">
               <img src="assets/profile_photo_alt.jpeg" alt="" />
+            </span>
+            <span class="portrait-card is-back" data-photo-card data-alt="Edwin Pan outdoors in a white sweater">
+              <img src="assets/profile_photo_third.jpeg" alt="" width="1600" height="1600" />
             </span>
           </button>
         </div>
@@ -798,10 +821,12 @@
           cards.forEach((card, index) => {
             const isActive = index === activeIndex;
             const isNext = index === (activeIndex + 1) % cards.length;
+            const isBack = cards.length > 2 && index === (activeIndex + 2) % cards.length;
             const image = card.querySelector("img");
 
             card.classList.toggle("is-active", isActive);
             card.classList.toggle("is-next", isNext);
+            card.classList.toggle("is-back", isBack);
             card.setAttribute("aria-hidden", String(!isActive));
 
             if (image) {
